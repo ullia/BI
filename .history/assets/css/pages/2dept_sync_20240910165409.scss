@@ -439,8 +439,19 @@ section {
       h3 {
         font-size: 1.667vw;
       }
+      .service__wrap > * > div {
+        height: 30vw;
+      }
+    }
+    &.content__service {
+      h3 {
+        font-size: 1.667vw;
+      }
       .service__wrap {
-        margin-top: 6.944vw;
+        margin-top: 120px;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
         > * {
           flex: 1 1 50%;
           height: auto;
@@ -448,8 +459,30 @@ section {
             margin-top: 100px;
           }
           > div {
-            height: 30vw;
+            flex: 1;
+            display: flex;
+            height: 450px;
+            flex-direction: column;
             padding: 60px;
+            color: $white-color;
+            &.service-01 {
+              background: url("/assets/images/pages/sync_boot/service-01.png") 0 0 no-repeat;
+              background-size: 100% auto;
+            }
+            &.service-02 {
+              background: url("/assets/images/pages/sync_boot/service-02.png") 0 0 no-repeat;
+              background-size: 100% auto;
+            }
+            &.service-03 {
+              background: url("/assets/images/pages/sync_boot/service-03.png") 0 0 no-repeat;
+              background-size: 100% auto;
+              border-top-right-radius: 50px;
+            }
+            &.service-04 {
+              background: url("/assets/images/pages/sync_boot/service-04.png") 0 0 no-repeat;
+              background-size: 100% auto;
+            }
+
             h4 {
               font-family: $pretendard-font;
               font-size: 40px;
