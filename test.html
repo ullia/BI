@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FullPage with Canvas Effect</title>
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="/assets/css/style.css" /> -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css"
+    />
+
+    <!-- JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script type="text/javascript" src="/assets/js/common.js"></script> -->
+
+    <style>
+      /* Basic styles for fullpage sections */
+      .section {
+        text-align: center;
+        font-size: 3em;
+        color: white;
+      }
+      #canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none; /* Make sure canvas does not block user interactions */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="fullpage">
+      <div class="section" style="background-color: #ff5f45">Section 1</div>
+      <div class="section" style="background-color: #0798ec">Section 2</div>
+      <div class="section" style="background-color: #fcf6e1">Section 3</div>
+      <div class="section" style="background-color: #ffcc00">Section 4</div>
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js"
+    ></script>
+    <script>
+      $(function () {
+        // // Canvas effect code
+        // const canvas = document.getElementById("canvas");
+        // const ctx = canvas.getContext("2d");
+        // let width, height;
+
+        // function resizeCanvas() {
+        //   width = canvas.width = window.innerWidth;
+        //   height = canvas.height = window.innerHeight;
+        // }
+
+        // resizeCanvas();
+        // window.addEventListener("resize", resizeCanvas);
+
+        // function drawTransitionEffect() {
+        //   // Example of a simple transition effect
+        //   const gradient = ctx.createLinearGradient(0, 0, width, height);
+        //   gradient.addColorStop(0, "rgba(255, 0, 0, 0.5)");
+        //   gradient.addColorStop(1, "rgba(0, 0, 255, 0.5)");
+
+        //   ctx.fillStyle = gradient;
+        //   ctx.fillRect(0, 0, width, height);
+        // }
+
+        // function onSectionLeave(origin, destination, direction) {
+        //   // Custom canvas animation when section changes
+        //   drawTransitionEffect();
+        // }
+
+        $("#fullpage").fullpage({
+          autoScrolling: true,
+          slidesNavigation: false,
+          easing: "easeInOutCubic",
+          easingcss3: "ease",
+          scrollingSpeed: 1200,
+          // responsiveWidth: 920,
+          // responsiveHeight:900,
+          recordHistory: false,
+          anchors: ["sec1", "sec2", "sec3", "sec4", "sec5", "sec6"],
+          menu: "#pagenation",
+          // autoScrolling: false,
+
+          onLeave: function (index, nextIndex, direction) {
+            console.log(`onleave!`);
+            // onSectionLeave();
+          },
+          afterLoad: function (anchorLink, index) {
+            console.log(`afterLoad!`);
+          },
+          afterRender: function () {
+            console.log(`afterRender!`);
+          },
+          afterResize: function () {
+            console.log(`afterResize!`);
+          },
+          afterResponsive: function (isResponsive) {
+            console.log(`afterResponsive!`);
+          },
+          afterSlideLoad: function (anchorLink, index, slideAnchor, slideIndex) {
+            console.log(`afterSlideLoad!`);
+          },
+          onSlideLeave: function (anchorLink, index, slideIndex, direction, nextSlideIndex) {
+            console.log(`onSlideLeave!`);
+          },
+        });
+
+        // $.fn.fullpage.setAllowScrolling(true);
+        // $.fn.fullpage.setScrollingSpeed(700);
+        // $.fn.fullpage.setOnSectionLeave(onSectionLeave);
+      });
+    </script>
+  </body>
+</html>
