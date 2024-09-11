@@ -1070,10 +1070,10 @@ section.content__flatform .content__list .item .body ul li span.name.type15::aft
   section.content__feature ul.feature_wrap {
     margin: 10.256vw auto;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
   section.content__feature ul.feature_wrap li {
-    flex: 1;
+    flex: 0 0 auto;
     padding: 3.472vw 2.083vw;
   }
   section.content__feature ul.feature_wrap li:hover {

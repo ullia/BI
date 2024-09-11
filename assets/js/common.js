@@ -66,7 +66,7 @@ const dialObj = {
   btns: null,
   btnsTotal: null,
   btnsDistance: null,
-  btnsInnerDistance: device.type === "desktop" ? 70 : device.type === "tablet" ? 60 : 40,
+  btnsInnerDistance: null,
   Descs: null,
   init: function () {
     dialObj.dial = document.querySelector(".dial__wrap");
@@ -75,6 +75,7 @@ const dialObj = {
     dialObj.btns = document.querySelectorAll(".dial__wrap button");
     dialObj.btnsTotal = dialObj.btns.length;
     dialObj.Descs = document.querySelectorAll(".dial__desc li");
+    dialObj.btnsInnerDistance = device.type === "desktop" ? 70 : device.type === "tablet" ? 60 : 40;
 
     this.resp();
 

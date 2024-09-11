@@ -916,9 +916,10 @@ section {
       ul.feature_wrap {
         margin: 10.256vw auto;
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+
         li {
-          flex: 1;
+          flex: 0 0 auto;
           padding: 3.472vw 2.083vw;
           &:hover {
             transform: scale(1.2);
@@ -941,3 +942,13 @@ section {
 // 모바일 소형 ~320
 @include mobileFold {
 }
+
+// 스와이퍼 css unset
+// @media (min-width: 768px) {
+//   .swiper,
+//   .swiper-container,
+//   .swiper-wrapper,
+//   .swiper-slide {
+//     all: unset !important;
+//   }
+// }
