@@ -1,15 +1,15 @@
 @charset "UTF-8";
 @import "./reset.css";
 #fullpage .section.sec1 {
-  background: url("/assets/images/pages/sync/bg-01.jpg") center center no-repeat;
+  background: url("/BI/assets/images/pages/sync/bg-01.jpg") center center no-repeat;
   background-size: cover;
 }
 #fullpage .section.sec2 {
-  background: url("/assets/images/pages/sync/bg-02.jpg") center center no-repeat;
+  background: url("/BI/assets/images/pages/sync/bg-02.jpg") center center no-repeat;
   background-size: cover;
 }
 #fullpage .section.sec3 {
-  background: url("/assets/images/pages/sync/bg-03.jpg") center center no-repeat;
+  background: url("/BI/assets/images/pages/sync/bg-03.jpg") center center no-repeat;
   background-size: cover;
 }
 #fullpage .section .title_box {
@@ -64,7 +64,7 @@
   bottom: 0;
   width: 25px;
   height: 14px;
-  background: url("/assets/images/pages/sync/arrow.png") center center no-repeat;
+  background: url("/BI/assets/images/pages/sync/arrow.png") center center no-repeat;
   background-size: 100%;
 }
 #fullpage h1 {
@@ -202,16 +202,8 @@
 }
 
 @media (max-width: 1439px) {
-  .menu__icon span {
-    background: violet !important;
-  }
   main section .inner {
     padding: 6.944vw 0;
-  }
-}
-@media (max-width: 1279px) {
-  .menu__icon span {
-    background: green !important;
   }
 }
 @media (max-width: 767px) {
@@ -241,11 +233,6 @@
   #pagenation li.active a i::before {
     width: 18px;
     height: 18px;
-  }
-}
-@media (max-width: 320px) {
-  .menu__icon span {
-    background: red !important;
   }
 }
 section .content__title {
@@ -281,7 +268,7 @@ section .page__deco {
 section .page__deco.type1 {
   height: 180px;
   top: -90px;
-  right: 0;
+  right: 60px;
   background-color: #0e998e;
   transform: rotate(25deg);
   z-index: 1;
@@ -289,13 +276,12 @@ section .page__deco.type1 {
 section.content__banner {
   overflow: hidden;
 }
-section.content__banner > img {
-  display: block;
+section.content__banner img {
   width: 100%;
 }
 section.content__banner .inner {
   position: absolute;
-  height: 100%;
+  height: -webkit-fill-available;
   padding: 0;
 }
 section.content__banner .banner__text {
@@ -306,7 +292,7 @@ section.content__banner .banner__text {
   left: 40px;
   transform: translateY(-50%);
   color: #ffffff;
-  background: url("/assets/images/pages/bg-bannertext.png") left top no-repeat;
+  background: url("/BI/assets/images/pages/bg-bannertext.png") left top no-repeat;
   background-size: 100% 100%;
 }
 section.content__banner .banner__text h2 {
@@ -342,26 +328,26 @@ section.content__service .service__wrap > *:first-child {
 section.content__service .service__wrap > * > div {
   flex: 1;
   display: flex;
-  height: 450px;
+  height: 420px;
   flex-direction: column;
   padding: 60px;
   color: #ffffff;
 }
 section.content__service .service__wrap > * > div.service-01 {
-  background: url("/assets/images/pages/sync_boot/service-01.png") 0 0 no-repeat;
+  background: url("/BI/assets/images/pages/sync_boot/service-01.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service .service__wrap > * > div.service-02 {
-  background: url("/assets/images/pages/sync_boot/service-02.png") 0 0 no-repeat;
+  background: url("/BI/assets/images/pages/sync_boot/service-02.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service .service__wrap > * > div.service-03 {
-  background: url("/assets/images/pages/sync_boot/service-03.png") 0 0 no-repeat;
+  background: url("/BI/assets/images/pages/sync_boot/service-03.png") 0 0 no-repeat;
   background-size: 100% auto;
   border-top-right-radius: 50px;
 }
 section.content__service .service__wrap > * > div.service-04 {
-  background: url("/assets/images/pages/sync_boot/service-04.png") 0 0 no-repeat;
+  background: url("/BI/assets/images/pages/sync_boot/service-04.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service .service__wrap > * > div h4 {
@@ -375,7 +361,7 @@ section.content__service .service__wrap > * > div p {
   line-height: 1.4em;
 }
 section.content__feature {
-  background: url("/assets/images/pages/sync_boot/feature-bg.jpg") 0 0 no-repeat;
+  background: url("/BI/assets/images/pages/sync_boot/feature-bg.jpg") 0 0 no-repeat;
   background-size: cover;
 }
 section.content__feature ul.feature_wrap {
@@ -417,6 +403,12 @@ section.content__composition .diagram {
   margin: 60px 0 50px;
   display: flex;
 }
+section.content__composition .diagram > img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 section.content__function {
   background-color: #f4f4f4;
   position: relative;
@@ -425,10 +417,10 @@ section.content__function .inner {
   display: flex;
 }
 section.content__function .content__title {
-  width: 30%;
+  width: 33%;
 }
 section.content__function .content__dial {
-  width: 70%;
+  width: 67%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -440,7 +432,8 @@ section.content__function .dial__wrap {
   height: 600px;
   border: 1px solid #cccccc;
   border-radius: 50%;
-  background: url("/assets/images/pages/sync_boot/dial.png") center center no-repeat;
+  background: url("/BI/assets/images/pages/sync_boot/dial.png") center center no-repeat;
+  background-size: 83% auto;
 }
 section.content__function .dial__wrap button {
   position: absolute;
@@ -498,11 +491,16 @@ section.content__function .dial__desc {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 650px;
-  height: 680px;
+  width: 33.854vw;
+  height: 620px;
   background: #ffffff;
-  border-top-right-radius: 50px;
-  padding: 120px 100px 120px 240px;
+  border-top-right-radius: 2.604vw;
+}
+section.content__function .dial__desc .desc__wrap {
+  width: 310px;
+  position: absolute;
+  top: 6.25vw;
+  right: 3.208vw;
 }
 section.content__function .dial__desc ul li {
   display: none;
@@ -595,7 +593,7 @@ section.content__flatform .content__list .item .body ul li span {
   display: block;
   width: 100%;
   text-align: center;
-  padding: 12px;
+  padding: 12px 30px;
   color: #333333;
 }
 section.content__flatform .content__list .item .body ul li span.name {
@@ -662,11 +660,26 @@ section.content__flatform .content__list .item .body ul li span.name.type15::aft
 }
 
 @media (max-width: 1439px) {
-  .menu__icon span {
-    background: violet !important;
+  section .content__title span {
+    font-size: 1.389vw;
   }
-  main section .inner {
-    padding: 6.944vw 0;
+  section .content__title h3 {
+    padding-top: 0.694vw;
+    font-size: 3.889vw;
+  }
+  section .content__title h4 {
+    padding-top: 1.389vw;
+    font-size: 1.667vw;
+  }
+  section .page__deco {
+    width: 6.25vw;
+    height: 6.25vw;
+    border-radius: 3.125vw;
+  }
+  section .page__deco.type1 {
+    height: 12.5vw;
+    top: -6.25vw;
+    right: 4.167vw;
   }
   section.content__banner .banner__text {
     left: 40px;
@@ -674,130 +687,406 @@ section.content__flatform .content__list .item .body ul li span.name.type15::aft
   section.content__service h3 {
     font-size: 1.667vw;
   }
+  section.content__service .service__wrap {
+    margin-top: 6.944vw;
+  }
+  section.content__service .service__wrap > *:first-child {
+    margin-top: 6.944vw;
+  }
   section.content__service .service__wrap > * > div {
-    height: 30vw;
+    height: 29vw;
+    padding: 4.167vw;
+  }
+  section.content__service .service__wrap > * > div h4 {
+    font-size: 2.778vw;
+  }
+  section.content__service .service__wrap > * > div p {
+    padding-top: 1.389vw;
+    font-size: 1.389vw;
+  }
+  section.content__feature {
+    background: url("/BI/assets/images/pages/sync_boot/feature-bg.jpg") 0 0 no-repeat;
+    background-size: auto 100%;
+  }
+  section.content__feature ul.feature_wrap {
+    margin: 6.944vw auto 5.972vw;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  section.content__feature ul.feature_wrap li {
+    flex: 1;
+    padding: 3.472vw 2.083vw;
+  }
+  section.content__feature ul.feature_wrap li:hover {
+    transform: scale(1.2);
+    border-top-right-radius: 2.083vw;
+  }
+  section.content__feature ul.feature_wrap li h4 {
+    padding: 1.389vw 0;
+    min-height: 6.667vw;
+    font-size: 1.389vw;
+  }
+  section.content__feature ul.feature_wrap li p {
+    font-size: 0.972vw;
+  }
+  section.content__composition .diagram {
+    max-width: 1440px;
+    width: 100%;
+    margin: 4.167vw 0 3.472vw;
+  }
+  section.content__function .inner {
+    display: flex;
+  }
+  section.content__function .dial__wrap {
+    position: relative;
+    margin: 6.944vw 0 4.167vw;
+    width: 34.722vw;
+    height: 34.722vw;
+    background: url("/BI/assets/images/pages/sync_boot/dial.png") center center no-repeat;
+    background-size: 83% auto;
+  }
+  section.content__function .dial__wrap button {
+    width: 3.333vw;
+    height: 3.333vw;
+  }
+  section.content__function .dial__wrap button::after {
+    width: 1.319vw;
+    height: 1.319vw;
+  }
+  section.content__function .dial__wrap button .btn__inner {
+    width: 6.944vw;
+    height: 6.25vw;
+  }
+  section.content__function .dial__wrap button .btn__inner span {
+    font-size: 1.389vw;
+  }
+  section.content__function .dial__desc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 33.854vw;
+    height: 38.722vw;
+    background: #ffffff;
+    border-top-right-radius: 2.604vw;
+  }
+  section.content__function .dial__desc .desc__wrap {
+    width: 310px;
+    position: absolute;
+    top: 6.25vw;
+    right: 3.208vw;
+  }
+  section.content__function .dial__desc ul li h4 {
+    font-size: 1.389vw;
+  }
+  section.content__function .dial__desc ul li p.title {
+    padding: 40px 0 20px;
+    font-size: 2.222vw;
+  }
+  section.content__function .dial__desc ul li p.desc {
+    font-size: 18px;
+  }
+  section.content__function .dial__desc .pagenation {
+    margin-top: 6.944vw;
+  }
+  section.content__function .dial__desc .pagenation span {
+    font-size: 1.25vw;
+  }
+  section.content__function .dial__desc .pagenation span.divide {
+    margin: 0 0.347vw;
+    width: 30px;
+    height: 3px;
+  }
+  section.content__flatform .content__list {
+    margin: 50px 0;
+    justify-content: space-between;
+    align-items: start;
+  }
+  section.content__flatform .content__list .item {
+    margin-right: 2.778vw;
+  }
+  section.content__flatform .content__list .item .head {
+    padding: 0.833vw;
+    font-size: 1.111vw;
+    border-top-right-radius: 3.125vw;
+  }
+  section.content__flatform .content__list .item .body {
+    padding: 1.389vw;
+  }
+  section.content__flatform .content__list .item .body ul li {
+    margin-bottom: 1.389vw;
+  }
+  section.content__flatform .content__list .item .body ul li:last-child {
+    margin-bottom: 0;
+  }
+  section.content__flatform .content__list .item .body ul li span.category {
+    font-size: 1.111vw;
+    line-height: 1.2em;
+  }
+  section.content__flatform .content__list .item .body ul li span.name {
+    font-size: 0.972vw;
+    line-height: 1.2em;
+  }
+  section.content__flatform .content__list .item .body ul li span.name::after {
+    width: 0.694vw;
+    height: 0.694vw;
   }
 }
 @media (max-width: 1279px) {
-  .menu__icon span {
-    background: green !important;
+  section .content__title span {
+    font-size: 1.389vw;
   }
-  header {
-    padding: 15px 20px;
+  section .content__title h3 {
+    padding-top: 0.694vw;
+    font-size: 3.889vw;
   }
-  header .bi__tabs ul li {
-    font-size: 14px;
+  section .content__title h4 {
+    padding-top: 1.389vw;
+    font-size: 1.667vw;
+  }
+  section.content__banner .banner__text {
+    left: 40px;
+    transform: translateY(-30%);
+  }
+  section.content__banner .banner__text h2 {
+    margin-top: -14px;
+    font-size: 4.167vw;
+  }
+  section.content__banner .banner__text p {
+    padding-top: 20px;
+    font-size: 1.25vw;
   }
   section.content__service h3 {
     font-size: 1.875vw;
   }
+  section.content__service .service__wrap {
+    margin-top: 6.944vw;
+  }
+  section.content__service .service__wrap > *:first-child {
+    margin-top: 6.944vw;
+  }
   section.content__service .service__wrap > * > div {
-    height: 30vw;
+    height: 27vw;
+    padding: 4.167vw;
+  }
+  section.content__service .service__wrap > * > div h4 {
+    font-size: 3.125vw;
+  }
+  section.content__service .service__wrap > * > div p {
+    padding-top: 1.563vw;
+    font-size: 1.563vw;
+  }
+  section.content__feature {
+    background: url("/BI/assets/images/pages/sync_boot/feature-bg.jpg") 0 0 no-repeat;
+    background-size: auto 100%;
+  }
+  section.content__feature ul.feature_wrap {
+    margin: 6.944vw auto 5.972vw;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  section.content__feature ul.feature_wrap li {
+    flex: 1;
+    padding: 3.472vw 2.083vw;
+  }
+  section.content__feature ul.feature_wrap li:hover {
+    transform: scale(1.2);
+    border-top-right-radius: 2.083vw;
+  }
+  section.content__feature ul.feature_wrap li h4 {
+    padding: 1.389vw 0;
+    min-height: 6.667vw;
+    font-size: 1.389vw;
+  }
+  section.content__feature ul.feature_wrap li p {
+    font-size: 0.972vw;
+  }
+  section.content__composition .diagram {
+    max-width: 1440px;
+    width: 100%;
+    margin: 4.167vw 0 3.472vw;
+  }
+  section.content__function .inner {
+    display: flex;
+  }
+  section.content__function .dial__wrap {
+    position: relative;
+    margin: 6.944vw 0 4.167vw;
+    width: 34.722vw;
+    height: 34.722vw;
+    background: url("/BI/assets/images/pages/sync_boot/dial.png") center center no-repeat;
+    background-size: 83% auto;
+  }
+  section.content__function .dial__wrap button {
+    width: 3.333vw;
+    height: 3.333vw;
+  }
+  section.content__function .dial__wrap button::after {
+    width: 1.319vw;
+    height: 1.319vw;
+  }
+  section.content__function .dial__wrap button .btn__inner {
+    width: 6.944vw;
+    height: 6.25vw;
+  }
+  section.content__function .dial__wrap button .btn__inner span {
+    padding-top: 4px;
+    font-size: 1.389vw;
+  }
+  section.content__function .dial__desc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 33.854vw;
+    height: 38.722vw;
+    background: #ffffff;
+    border-top-right-radius: 2.604vw;
+  }
+  section.content__function .dial__desc .desc__wrap {
+    width: 310px;
+    position: absolute;
+    top: 6.25vw;
+    right: 3.208vw;
+  }
+  section.content__function .dial__desc ul li h4 {
+    font-size: 1.389vw;
+  }
+  section.content__function .dial__desc ul li p.title {
+    padding: 40px 0 20px;
+    font-size: 2.222vw;
+  }
+  section.content__function .dial__desc ul li p.desc {
+    font-size: 18px;
+  }
+  section.content__function .dial__desc .pagenation {
+    margin-top: 6.944vw;
+  }
+  section.content__function .dial__desc .pagenation span {
+    font-size: 1.25vw;
+  }
+  section.content__function .dial__desc .pagenation span.divide {
+    margin: 0 0.347vw;
+    width: 30px;
+    height: 3px;
+  }
+  section.content__flatform .content__list {
+    margin: 3.472vw 0;
+    justify-content: space-between;
+    align-items: start;
+  }
+  section.content__flatform .content__list .item {
+    margin-right: 1.563vw;
+  }
+  section.content__flatform .content__list .item .head {
+    padding: 1.172vw;
+    font-size: 1.2vw;
+  }
+  section.content__flatform .content__list .item .body {
+    padding: 1.172vw;
+  }
+  section.content__flatform .content__list .item .body ul li {
+    margin-bottom: 1.172vw;
+  }
+  section.content__flatform .content__list .item .body ul li:last-child {
+    margin-bottom: 0;
+  }
+  section.content__flatform .content__list .item .body ul li span.category {
+    padding: 0.938vw 2.344vw;
+    font-size: 1.2vw;
+    line-height: 1.2em;
+  }
+  section.content__flatform .content__list .item .body ul li span.name {
+    padding: 0.938vw 2.344vw;
+    font-size: 1.1vw;
+    line-height: 1.2em;
+  }
+  section.content__flatform .content__list .item .body ul li span.name::after {
+    width: 0.694vw;
+    height: 0.694vw;
   }
 }
 @media (max-width: 767px) {
-  .mbr {
-    display: block;
+  section .inner {
+    padding: 12.821vw 5.128vw !important;
   }
-  .menu__icon span {
-    background: yellow !important;
-  }
-  header {
-    padding: 20px 30px;
-  }
-  header .bi__logo {
-    width: 77px;
-  }
-  header .bi__logo img {
-    width: 100%;
-  }
-  header .bi__tabs {
-    display: none;
-  }
-  header .bi__menu {
-    width: 16px;
-    height: 16px;
-  }
-  header .bi__menu .menu__icon span {
-    height: 2px;
-  }
-  footer {
-    padding: 7.692vw 0;
-  }
-  footer .footer__inner {
-    max-width: 82.564vw;
-    margin: 0;
-  }
-  footer .footer__inner a {
-    display: none;
-  }
-  footer .footer__inner .footer__info ul {
-    flex-direction: column;
-    width: 100%;
-  }
-  footer .footer__inner .footer__info ul li {
-    padding: 2px 0;
-  }
-  footer .footer__inner .footer__info ul li p {
-    font-size: 3.077vw;
-  }
-  footer .footer__inner .footer__info ul li p.name {
-    padding-right: 10px;
-  }
-  footer .footer__inner .footer__info ul li p.desc {
-    color: #ffffff;
-    line-height: 1.5em;
-  }
-  footer .footer__inner .footer__copyright {
-    padding-top: 10px;
-    font-size: 3.077vw;
-  }
-  .floating__menu {
-    bottom: 50px;
-  }
-  .floating__menu button {
-    width: 54px;
-    height: 54px;
-  }
-  .floating__menu button > img {
-    width: 18px;
-    height: 18px;
-  }
-  .floating__menu button > span {
-    padding-top: 0;
-    font-size: 0.8em;
-  }
-  #fullpage .section .title_box h2 {
-    font-size: 10.256vw;
-  }
-  #fullpage .section .title_box h3 {
-    font-size: 5.128vw;
-  }
-  #fullpage .section .title_box .btn__more {
+  section .content__title span {
     font-size: 4.103vw;
   }
-  #pagenation {
-    left: 20px;
+  section .content__title h3 {
+    padding-top: 1.282vw;
+    font-size: 8.205vw;
   }
-  #pagenation li {
-    margin: 5px 0;
+  section .content__title h4 {
+    padding-top: 1.282vw;
+    font-size: 4.615vw;
   }
-  #pagenation a i {
-    width: 6px;
-    height: 6px;
+  section.content__banner .banner__text {
+    width: 78.205vw;
+    height: 47.692vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url("/BI/assets/images/pages/bg-bannertext-m.png") left top no-repeat;
+    background-size: 100% 100%;
   }
-  #pagenation a i::before {
-    width: 6px;
-    height: 6px;
+  section.content__banner .banner__text h2 {
+    margin-top: -1.026vw;
+    font-size: 9.231vw;
   }
-  #pagenation li.active a i::before {
-    width: 18px;
-    height: 18px;
+  section.content__banner .banner__text p {
+    padding-top: 5.128vw;
+    font-size: 4.615vw;
   }
-}
-@media (max-width: 320px) {
-  .menu__icon span {
-    background: red !important;
+  section.content__service h3 {
+    font-size: 4.615vw;
+  }
+  section.content__service .service__wrap {
+    margin-top: 12.821vw;
+    flex-direction: column;
+  }
+  section.content__service .service__wrap > *:first-child {
+    margin-top: 0;
+  }
+  section.content__service .service__wrap > * > div {
+    height: 53.846vw;
+    padding: 5.128vw;
+  }
+  section.content__service .service__wrap > * > div.service-01 {
+    border-top-right-radius: 50px;
+  }
+  section.content__service .service__wrap > * > div.service-03 {
+    border-radius: 0;
+  }
+  section.content__service .service__wrap > * > div h4 {
+    font-size: 6.154vw;
+  }
+  section.content__service .service__wrap > * > div p {
+    padding-top: 3.59vw;
+    font-size: 3.59vw;
+  }
+  section.content__feature {
+    background: url("/BI/assets/images/pages/sync_boot/feature-bg.jpg") 0 0 no-repeat;
+    background-size: auto 100%;
+  }
+  section.content__feature ul.feature_wrap {
+    margin: 10.256vw auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  section.content__feature ul.feature_wrap li {
+    flex: 1;
+    padding: 3.472vw 2.083vw;
+  }
+  section.content__feature ul.feature_wrap li:hover {
+    transform: scale(1.2);
+    border-top-right-radius: 2.083vw;
+  }
+  section.content__feature ul.feature_wrap li h4 {
+    padding: 1.389vw 0;
+    min-height: 6.667vw;
+    font-size: 1.389vw;
+  }
+  section.content__feature ul.feature_wrap li p {
+    font-size: 0.972vw;
   }
 }
 body {
@@ -815,6 +1104,14 @@ body {
   -webkit-clip-path: polygon(0 0, 0 0, 0 0);
           clip-path: polygon(0 0, 0 0, 0 0); /* inset(50%) 와 동일한 표현 */
   border: 0;
+}
+
+.desktop-image {
+  display: block;
+}
+
+.mobile-image {
+  display: none;
 }
 
 .mbr {
@@ -932,7 +1229,8 @@ main section.fullHeight {
 }
 main section .inner {
   position: relative;
-  padding: 120px 0;
+  padding: 120px 40px;
+  margin: 0 auto;
   width: 100%;
   max-width: 1440px;
 }
@@ -948,15 +1246,15 @@ main section .bi__intro {
   cursor: pointer;
 }
 main section .bi__intro.intro-01 {
-  background: url("/assets/images/common/bi-intro-01.jpg") center top no-repeat;
+  background: url("/BI/assets/images/common/bi-intro-01.jpg") center top no-repeat;
   background-size: auto 100%;
 }
 main section .bi__intro.intro-02 {
-  background: url("/assets/images/common/bi-intro-02.jpg") center top no-repeat;
+  background: url("/BI/assets/images/common/bi-intro-02.jpg") center top no-repeat;
   background-size: auto 100%;
 }
 main section .bi__intro.intro-03 {
-  background: url("/assets/images/common/bi-intro-03.jpg") center top no-repeat;
+  background: url("/BI/assets/images/common/bi-intro-03.jpg") center top no-repeat;
   background-size: auto 100%;
 }
 main section .bi__intro .bi__intro__title {
@@ -1015,7 +1313,7 @@ footer .footer__inner a {
 }
 footer .footer__inner a img {
   display: block;
-  width: 50%;
+  opacity: 0.5;
 }
 footer .footer__inner .footer__info ul {
   display: flex;
@@ -1084,7 +1382,7 @@ footer .footer__inner .footer__copyright {
     background: violet !important;
   }
   main section .inner {
-    padding: 6.944vw 0;
+    padding: 6.944vw 40px;
   }
 }
 @media (max-width: 1279px) {
@@ -1097,8 +1395,17 @@ footer .footer__inner .footer__copyright {
   header .bi__tabs ul li {
     font-size: 14px;
   }
+  footer .footer__inner a {
+    display: none;
+  }
 }
 @media (max-width: 767px) {
+  .desktop-image {
+    display: none;
+  }
+  .mobile-image {
+    display: block;
+  }
   .mbr {
     display: block;
   }

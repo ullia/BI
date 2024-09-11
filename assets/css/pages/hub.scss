@@ -2,15 +2,15 @@
 #fullpage {
   .section {
     &.sec1 {
-      background: url("/assets/images/pages/sync/bg-01.jpg") center center no-repeat;
+      background: url("/BI/assets/images/pages/sync/bg-01.jpg") center center no-repeat;
       background-size: cover;
     }
     &.sec2 {
-      background: url("/assets/images/pages/sync/bg-02.jpg") center center no-repeat;
+      background: url("/BI/assets/images/pages/sync/bg-02.jpg") center center no-repeat;
       background-size: cover;
     }
     &.sec3 {
-      background: url("/assets/images/pages/sync/bg-03.jpg") center center no-repeat;
+      background: url("/BI/assets/images/pages/sync/bg-03.jpg") center center no-repeat;
       background-size: cover;
     }
     .title_box {
@@ -62,7 +62,7 @@
           bottom: 0;
           width: 25px;
           height: 14px;
-          background: url("/assets/images/pages/sync/arrow.png") center center no-repeat;
+          background: url("/BI/assets/images/pages/sync/arrow.png") center center no-repeat;
           background-size: 100%;
         }
       }

@@ -51,15 +51,6 @@ const gnb = {
   },
 };
 
-window.addEventListener("resize", function () {
-  device.init();
-  if (device.type === "tablet" || device.type === "mobile") {
-    gnb.tabs.style.display = "none";
-  } else {
-    gnb.tabs.style.display = "block";
-  }
-});
-
 window.addEventListener("scroll", function () {
   let pos = window.scrollY;
   if (gnb.pageType != null || gnb.pageType == "detail") {
@@ -75,7 +66,7 @@ const dialObj = {
   btns: null,
   btnsTotal: null,
   btnsDistance: null,
-  btnsInnerDistance: null,
+  btnsInnerDistance: device.type === "desktop" ? 70 : device.type === "tablet" ? 60 : 40,
   Descs: null,
   init: function () {
     dialObj.dial = document.querySelector(".dial__wrap");
@@ -113,14 +104,18 @@ const dialObj = {
   resp: function () {
     let standard = 270;
     let interval = (360 / dialObj.btnsTotal).toFixed(4) * 1;
-    gnb.distance = dialObj.size / 2;
+    dialObj.btnsDistance = dialObj.size / 2;
 
     dialObj.btns.forEach((btn, idx) => {
       let transformTemp = `translate(-50%, -50%) rotate(${standard.toFixed(4)}deg) translate(${
-        gnb.distance
+        dialObj.btnsDistance
+      }px) rotate(-${standard.toFixed(4)}deg)`;
+      let transformTemp2 = `translate(-50%, -50%) rotate(${standard.toFixed(4)}deg) translate(${
+        dialObj.btnsInnerDistance
       }px) rotate(-${standard.toFixed(4)}deg)`;
       standard < 360 ? (standard += interval) : (standard += interval - 360);
       btn.style.transform = transformTemp;
+      btn.childNodes[1].style.transform = transformTemp2;
     });
     console.log(standard.toFixed(4) * 1);
   },
@@ -137,4 +132,14 @@ window.addEventListener("DOMContentLoaded", function () {
   device.init();
   gnb.init();
   dialObj.init();
+});
+
+window.addEventListener("resize", function () {
+  device.init();
+  dialObj.init();
+  if (device.type === "tablet" || device.type === "mobile") {
+    gnb.tabs.style.display = "none";
+  } else {
+    gnb.tabs.style.display = "block";
+  }
 });

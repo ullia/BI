@@ -32,7 +32,7 @@ section {
     &.type1 {
       height: 180px;
       top: -90px;
-      right: 0;
+      right: 60px;
       background-color: $sign-color;
       transform: rotate(25deg);
       z-index: 1;
@@ -40,13 +40,12 @@ section {
   }
   &.content__banner {
     overflow: hidden;
-    > img {
-      display: block;
+    img {
       width: 100%;
     }
     .inner {
       position: absolute;
-      height: 100%;
+      height: -webkit-fill-available;
       padding: 0;
     }
     .banner__text {
@@ -57,7 +56,7 @@ section {
       left: 40px;
       transform: translateY(-50%);
       color: $white-color;
-      background: url("/assets/images/pages/bg-bannertext.png") left top no-repeat;
+      background: url("/BI/assets/images/pages/bg-bannertext.png") left top no-repeat;
       background-size: 100% 100%;
       h2 {
         margin-top: -14px;
@@ -93,25 +92,25 @@ section {
         > div {
           flex: 1;
           display: flex;
-          height: 450px;
+          height: 420px;
           flex-direction: column;
           padding: 60px;
           color: $white-color;
           &.service-01 {
-            background: url("/assets/images/pages/sync_boot/service-01.png") 0 0 no-repeat;
+            background: url("/BI/assets/images/pages/sync_boot/service-01.png") 0 0 no-repeat;
             background-size: 100% auto;
           }
           &.service-02 {
-            background: url("/assets/images/pages/sync_boot/service-02.png") 0 0 no-repeat;
+            background: url("/BI/assets/images/pages/sync_boot/service-02.png") 0 0 no-repeat;
             background-size: 100% auto;
           }
           &.service-03 {
-            background: url("/assets/images/pages/sync_boot/service-03.png") 0 0 no-repeat;
+            background: url("/BI/assets/images/pages/sync_boot/service-03.png") 0 0 no-repeat;
             background-size: 100% auto;
             border-top-right-radius: 50px;
           }
           &.service-04 {
-            background: url("/assets/images/pages/sync_boot/service-04.png") 0 0 no-repeat;
+            background: url("/BI/assets/images/pages/sync_boot/service-04.png") 0 0 no-repeat;
             background-size: 100% auto;
           }
 
@@ -130,7 +129,7 @@ section {
     }
   }
   &.content__feature {
-    background: url("/assets/images/pages/sync_boot/feature-bg.jpg") 0 0 no-repeat;
+    background: url("/BI/assets/images/pages/sync_boot/feature-bg.jpg") 0 0 no-repeat;
     background-size: cover;
     ul.feature_wrap {
       margin: 100px 0 86px;
@@ -174,6 +173,11 @@ section {
     .diagram {
       margin: 60px 0 50px;
       display: flex;
+      > img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
     }
   }
   &.content__function {
@@ -183,10 +187,10 @@ section {
       display: flex;
     }
     .content__title {
-      width: 30%;
+      width: 33%;
     }
     .content__dial {
-      width: 70%;
+      width: 67%;
       display: flex;
       @include flex-align(center, center);
     }
@@ -197,7 +201,8 @@ section {
       height: 600px;
       border: 1px solid $gray-color;
       border-radius: 50%;
-      background: url("/assets/images/pages/sync_boot/dial.png") center center no-repeat;
+      background: url("/BI/assets/images/pages/sync_boot/dial.png") center center no-repeat;
+      background-size: 83% auto;
       button {
         position: absolute;
         top: 50%;
@@ -255,11 +260,17 @@ section {
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 650px;
-      height: 680px;
+      width: 33.854vw;
+      height: 620px;
       background: $white-color;
-      border-top-right-radius: 50px;
-      padding: 120px 100px 120px 240px;
+      border-top-right-radius: 2.604vw;
+      // padding: 6.25vw 5.208vw 6.25vw 12.5vw;
+      .desc__wrap {
+        width: 310px;
+        position: absolute;
+        top: 6.25vw;
+        right: 3.208vw;
+      }
       ul {
         li {
           display: none;
@@ -351,7 +362,7 @@ section {
                 display: block;
                 width: 100%;
                 text-align: center;
-                padding: 12px;
+                padding: 12px 30px;
                 color: $text-color;
                 &.category {
                 }
@@ -430,6 +441,29 @@ section {
 // 데스크탑 소형 ~1440
 @include desktopSmall {
   section {
+    .content__title {
+      span {
+        font-size: 1.389vw;
+      }
+      h3 {
+        padding-top: 0.694vw;
+        font-size: 3.889vw;
+      }
+      h4 {
+        padding-top: 1.389vw;
+        font-size: 1.667vw;
+      }
+    }
+    .page__deco {
+      width: 6.25vw;
+      height: 6.25vw;
+      border-radius: 3.125vw;
+      &.type1 {
+        height: 12.5vw;
+        top: -6.25vw;
+        right: 4.167vw;
+      }
+    }
     &.content__banner {
       .banner__text {
         left: 40px;
@@ -442,23 +476,161 @@ section {
       .service__wrap {
         margin-top: 6.944vw;
         > * {
-          flex: 1 1 50%;
-          height: auto;
           &:first-child {
-            margin-top: 100px;
+            margin-top: 6.944vw;
           }
           > div {
-            height: 30vw;
-            padding: 60px;
+            height: 29vw;
+            padding: 4.167vw;
             h4 {
-              font-family: $pretendard-font;
-              font-size: 40px;
-              font-weight: 700;
+              font-size: 2.778vw;
             }
             p {
-              padding-top: 20px;
-              font-size: 20px;
-              line-height: 1.4em;
+              padding-top: 1.389vw;
+              font-size: 1.389vw;
+            }
+          }
+        }
+      }
+    }
+    &.content__feature {
+      background: url("/BI/assets/images/pages/sync_boot/feature-bg.jpg") 0 0 no-repeat;
+      background-size: auto 100%;
+      ul.feature_wrap {
+        margin: 6.944vw auto 5.972vw;
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          flex: 1;
+          padding: 3.472vw 2.083vw;
+          &:hover {
+            transform: scale(1.2);
+            border-top-right-radius: 2.083vw;
+          }
+          h4 {
+            padding: 1.389vw 0;
+            min-height: 6.667vw;
+            font-size: 1.389vw;
+          }
+          p {
+            font-size: 0.972vw;
+          }
+        }
+      }
+    }
+    &.content__composition {
+      .diagram {
+        max-width: 1440px;
+        width: 100%;
+        margin: 4.167vw 0 3.472vw;
+      }
+    }
+    &.content__function {
+      .inner {
+        display: flex;
+      }
+      .dial__wrap {
+        position: relative;
+        margin: 6.944vw 0 4.167vw;
+        width: 34.722vw;
+        height: 34.722vw;
+        background: url("/BI/assets/images/pages/sync_boot/dial.png") center center no-repeat;
+        background-size: 83% auto;
+        button {
+          width: 3.333vw;
+          height: 3.333vw;
+          &::after {
+            width: 1.319vw;
+            height: 1.319vw;
+          }
+          .btn__inner {
+            width: 6.944vw;
+            height: 6.25vw;
+            span {
+              font-size: 1.389vw;
+            }
+          }
+        }
+      }
+      .dial__desc {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 33.854vw;
+        height: 38.722vw;
+        background: $white-color;
+        border-top-right-radius: 2.604vw;
+        // padding: 6.25vw 5.208vw 6.25vw 12.5vw;
+        .desc__wrap {
+          width: 310px;
+          position: absolute;
+          top: 6.25vw;
+          right: 3.208vw;
+        }
+        ul {
+          li {
+            h4 {
+              font-size: 1.389vw;
+            }
+            p {
+              &.title {
+                padding: 40px 0 20px;
+                font-size: 2.222vw;
+              }
+              &.desc {
+                font-size: 18px;
+              }
+            }
+          }
+        }
+        .pagenation {
+          margin-top: 6.944vw;
+          span {
+            font-size: 1.25vw;
+            &.divide {
+              margin: 0 0.347vw;
+              width: 30px;
+              height: 3px;
+            }
+          }
+        }
+      }
+    }
+    &.content__flatform {
+      .content__list {
+        margin: 50px 0;
+        @include flex-align(space-between, start);
+        .item {
+          margin-right: 2.778vw;
+          .head {
+            padding: 0.833vw;
+            font-size: 1.111vw;
+            border-top-right-radius: 3.125vw;
+          }
+          .body {
+            padding: 1.389vw;
+            ul {
+              li {
+                margin-bottom: 1.389vw;
+
+                &:last-child {
+                  margin-bottom: 0;
+                }
+                span {
+                  &.category {
+                    font-size: 1.111vw;
+                    line-height: 1.2em;
+                  }
+                  &.name {
+                    font-size: 0.972vw;
+                    line-height: 1.2em;
+                    &::after {
+                      width: 0.694vw;
+                      height: 0.694vw;
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -467,22 +639,303 @@ section {
   }
 }
 
-// 태블릿 768 ~ 1439
+// 태블릿 ~1279
 @include tablet {
   section {
+    .content__title {
+      span {
+        font-size: 1.389vw;
+      }
+      h3 {
+        padding-top: 0.694vw;
+        font-size: 3.889vw;
+      }
+      h4 {
+        padding-top: 1.389vw;
+        font-size: 1.667vw;
+      }
+    }
+    &.content__banner {
+      .banner__text {
+        left: 40px;
+        transform: translateY(-30%);
+        h2 {
+          margin-top: -14px;
+          font-size: 4.167vw;
+        }
+        p {
+          padding-top: 20px;
+          font-size: 1.25vw;
+        }
+      }
+    }
     &.content__service {
       h3 {
         font-size: 1.875vw;
       }
-      .service__wrap > * > div {
-        height: 30vw;
+      .service__wrap {
+        margin-top: 6.944vw;
+        > * {
+          &:first-child {
+            margin-top: 6.944vw;
+          }
+          > div {
+            height: 27vw;
+            padding: 4.167vw;
+            h4 {
+              font-size: 3.125vw;
+            }
+            p {
+              padding-top: 1.563vw;
+              font-size: 1.563vw;
+            }
+          }
+        }
+      }
+    }
+    &.content__feature {
+      background: url("/BI/assets/images/pages/sync_boot/feature-bg.jpg") 0 0 no-repeat;
+      background-size: auto 100%;
+      ul.feature_wrap {
+        margin: 6.944vw auto 5.972vw;
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          flex: 1;
+          padding: 3.472vw 2.083vw;
+          &:hover {
+            transform: scale(1.2);
+            border-top-right-radius: 2.083vw;
+          }
+          h4 {
+            padding: 1.389vw 0;
+            min-height: 6.667vw;
+            font-size: 1.389vw;
+          }
+          p {
+            font-size: 0.972vw;
+          }
+        }
+      }
+    }
+    &.content__composition {
+      .diagram {
+        max-width: 1440px;
+        width: 100%;
+        margin: 4.167vw 0 3.472vw;
+      }
+    }
+    &.content__function {
+      .inner {
+        display: flex;
+      }
+      .dial__wrap {
+        position: relative;
+        margin: 6.944vw 0 4.167vw;
+        width: 34.722vw;
+        height: 34.722vw;
+        background: url("/BI/assets/images/pages/sync_boot/dial.png") center center no-repeat;
+        background-size: 83% auto;
+        button {
+          width: 3.333vw;
+          height: 3.333vw;
+          &::after {
+            width: 1.319vw;
+            height: 1.319vw;
+          }
+          .btn__inner {
+            width: 6.944vw;
+            height: 6.25vw;
+            span {
+              padding-top: 4px;
+              font-size: 1.389vw;
+            }
+          }
+        }
+      }
+      .dial__desc {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 33.854vw;
+        height: 38.722vw;
+        background: $white-color;
+        border-top-right-radius: 2.604vw;
+        // padding: 6.25vw 5.208vw 6.25vw 12.5vw;
+        .desc__wrap {
+          width: 310px;
+          position: absolute;
+          top: 6.25vw;
+          right: 3.208vw;
+        }
+        ul {
+          li {
+            h4 {
+              font-size: 1.389vw;
+            }
+            p {
+              &.title {
+                padding: 40px 0 20px;
+                font-size: 2.222vw;
+              }
+              &.desc {
+                font-size: 18px;
+              }
+            }
+          }
+        }
+        .pagenation {
+          margin-top: 6.944vw;
+          span {
+            font-size: 1.25vw;
+            &.divide {
+              margin: 0 0.347vw;
+              width: 30px;
+              height: 3px;
+            }
+          }
+        }
+      }
+    }
+    &.content__flatform {
+      .content__list {
+        margin: 3.472vw 0;
+        @include flex-align(space-between, start);
+        .item {
+          margin-right: 1.563vw;
+          .head {
+            padding: 1.172vw;
+            font-size: 1.2vw;
+          }
+          .body {
+            padding: 1.172vw;
+            ul {
+              li {
+                margin-bottom: 1.172vw;
+
+                &:last-child {
+                  margin-bottom: 0;
+                }
+                span {
+                  &.category {
+                    padding: 0.938vw 2.344vw;
+                    font-size: 1.2vw;
+                    line-height: 1.2em;
+                  }
+                  &.name {
+                    padding: 0.938vw 2.344vw;
+                    font-size: 1.1vw;
+                    line-height: 1.2em;
+                    &::after {
+                      width: 0.694vw;
+                      height: 0.694vw;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
 }
 
-// 모바일 320 ~ 767
+// 모바일 ~767
 @include mobile {
+  section {
+    .inner {
+      padding: 12.821vw 5.128vw !important;
+    }
+    .content__title {
+      span {
+        font-size: 4.103vw;
+      }
+      h3 {
+        padding-top: 1.282vw;
+        font-size: 8.205vw;
+      }
+      h4 {
+        padding-top: 1.282vw;
+        font-size: 4.615vw;
+      }
+    }
+    &.content__banner {
+      .banner__text {
+        width: 78.205vw;
+        height: 47.692vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: url("/BI/assets/images/pages/bg-bannertext-m.png") left top no-repeat;
+        background-size: 100% 100%;
+        h2 {
+          margin-top: -1.026vw;
+          font-size: 9.231vw;
+        }
+        p {
+          padding-top: 5.128vw;
+          font-size: 4.615vw;
+        }
+      }
+    }
+    &.content__service {
+      h3 {
+        font-size: 4.615vw;
+      }
+      .service__wrap {
+        margin-top: 12.821vw;
+        flex-direction: column;
+        > * {
+          &:first-child {
+            margin-top: 0;
+          }
+          > div {
+            height: 53.846vw;
+            padding: 5.128vw;
+            &.service-01 {
+              border-top-right-radius: 50px;
+            }
+            &.service-03 {
+              border-radius: 0;
+            }
+            h4 {
+              font-size: 6.154vw;
+            }
+            p {
+              padding-top: 3.59vw;
+              font-size: 3.59vw;
+            }
+          }
+        }
+      }
+    }
+    &.content__feature {
+      background: url("/BI/assets/images/pages/sync_boot/feature-bg.jpg") 0 0 no-repeat;
+      background-size: auto 100%;
+      ul.feature_wrap {
+        margin: 10.256vw auto;
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          flex: 1;
+          padding: 3.472vw 2.083vw;
+          &:hover {
+            transform: scale(1.2);
+            border-top-right-radius: 2.083vw;
+          }
+          h4 {
+            padding: 1.389vw 0;
+            min-height: 6.667vw;
+            font-size: 1.389vw;
+          }
+          p {
+            font-size: 0.972vw;
+          }
+        }
+      }
+    }
+  }
 }
 
 // 모바일 소형 ~320

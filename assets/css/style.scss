@@ -28,6 +28,13 @@ body {
   border: 0;
 }
 
+.desktop-image {
+  display: block;
+}
+.mobile-image {
+  display: none;
+}
+
 .mbr {
   display: inline-block;
 }
@@ -139,7 +146,8 @@ main {
     }
     .inner {
       position: relative;
-      padding: 120px 0;
+      padding: 120px 40px;
+      margin: 0 auto;
       width: 100%;
       max-width: 1440px;
     }
@@ -153,15 +161,15 @@ main {
       transition: flex 0.6s ease-in-out;
       cursor: pointer;
       &.intro-01 {
-        background: url("/assets/images/common/bi-intro-01.jpg") center top no-repeat;
+        background: url("/BI/assets/images/common/bi-intro-01.jpg") center top no-repeat;
         background-size: auto 100%;
       }
       &.intro-02 {
-        background: url("/assets/images/common/bi-intro-02.jpg") center top no-repeat;
+        background: url("/BI/assets/images/common/bi-intro-02.jpg") center top no-repeat;
         background-size: auto 100%;
       }
       &.intro-03 {
-        background: url("/assets/images/common/bi-intro-03.jpg") center top no-repeat;
+        background: url("/BI/assets/images/common/bi-intro-03.jpg") center top no-repeat;
         background-size: auto 100%;
       }
       .bi__intro__title {
@@ -218,7 +226,7 @@ footer {
       @include position(absolute, 0, 0, 1);
       img {
         display: block;
-        width: 50%;
+        opacity: 0.5;
       }
     }
     .footer__info {
@@ -288,7 +296,7 @@ footer {
     background: violet !important;
   }
   main section .inner {
-    padding: 6.944vw 0;
+    padding: 6.944vw 40px;
   }
 }
 
@@ -303,10 +311,23 @@ footer {
       font-size: 14px;
     }
   }
+  footer {
+    .footer__inner {
+      a {
+        display: none;
+      }
+    }
+  }
 }
 
 // 모바일 320 ~ 767
 @include mobile {
+  .desktop-image {
+    display: none;
+  }
+  .mobile-image {
+    display: block;
+  }
   .mbr {
     display: block;
   }
