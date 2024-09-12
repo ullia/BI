@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/BI/assets/css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
+    <script src="/BI/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
     <script src="/BI/assets/js/common.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
@@ -77,7 +78,9 @@
           </div>
         </div>
       </section>
-      <section class="content__service">
+      <section class="content__service sync-boot">
+        <span class="page__deco__text" style="top: 21%; left: 0">SYNC BOOT</span>
+        <span class="page__deco__text" style="bottom: 0; right: 0">MICRO SERVICE</span>
         <div class="inner">
           <h3>
             오픈소스 기반으로 마이크로 서비스 아키텍처 컨테이너 운영 및 DevOps 플랫폼으로<br />
@@ -130,8 +133,8 @@
           </div>
 
           <div class="mobile-swiper">
-            <ul class="feature_wrap swiper-wrapper">
-              <li class="swiper-slide">
+            <ul class="feature_wrap">
+              <li class="">
                 <img src="/BI/assets/images/pages/sync_boot/feature-01.png" alt="" />
                 <h4>오픈소스 기반<br />MSA 플랫폼</h4>
                 <p>
@@ -141,7 +144,7 @@
                   특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
                 </p>
               </li>
-              <li class="swiper-slide">
+              <li class="">
                 <img src="/BI/assets/images/pages/sync_boot/feature-02.png" alt="" />
                 <h4>검증된 솔루션</h4>
                 <p>
@@ -149,7 +152,7 @@
                   자동화된 개발/배포<br />
                 </p>
               </li>
-              <li class="swiper-slide">
+              <li class="">
                 <img src="/BI/assets/images/pages/sync_boot/feature-03.png" alt="" />
                 <h4>부가기능 및<br />SLA 보장</h4>
                 <p>
@@ -159,7 +162,7 @@
                   특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
                 </p>
               </li>
-              <li class="swiper-slide">
+              <li class="">
                 <img src="/BI/assets/images/pages/sync_boot/feature-04.png" alt="" />
                 <h4>모듈화된<br />설계</h4>
                 <p>
@@ -169,7 +172,7 @@
                   특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
                 </p>
               </li>
-              <li class="swiper-slide">
+              <li class="">
                 <img src="/BI/assets/images/pages/sync_boot/feature-05.png" alt="" />
                 <h4>확장성</h4>
                 <p>
@@ -179,7 +182,7 @@
                   특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
                 </p>
               </li>
-              <li class="swiper-slide">
+              <li class="">
                 <img src="/BI/assets/images/pages/sync_boot/feature-06.png" alt="" />
                 <h4>E2E 솔루션</h4>
                 <p>
@@ -190,28 +193,37 @@
                 </p>
               </li>
             </ul>
+            <div class="swiper-controls">
+              <div class="swiper-pagination"></div>
+              <div class="swiper-navigator">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div>
+            </div>
           </div>
+          <span class="page__deco type2"></span>
         </div>
         <script>
           window.addEventListener("DOMContentLoaded", function () {
-            const swiperInstance = null;
+            var swiperInstance = null;
 
             function initSwiper(elem) {
-              console.log("initSwiper");
-
               if (swiperInstance === null) {
-                const elem = document.querySelector(elem);
-                elem.classList.add("swiper");
-                elem.children.classList.add("swiper-wrapper");
-                elem.children.forEach(item => {
-                  item.classList.add(".swiper-slide");
+                const element = document.querySelector(elem);
+                element.classList.add("swiper");
+                console.log(element.children[0].children);
+                element.children[0].classList.add("swiper-wrapper");
+                [].forEach.call(element.children[0].children, item => {
+                  item.classList.add("swiper-slide");
                 });
 
                 swiperInstance = new Swiper(".swiper", {
+                  slidesPerView: 1,
                   loop: true,
                   pagination: {
                     el: ".swiper-pagination",
                     clickable: true,
+                    type: "progressbar",
                   },
                   navigation: {
                     nextEl: ".swiper-button-next",
@@ -221,15 +233,24 @@
               }
             }
 
-            function destroySwiper() {
-              console.log("destroySwiper");
-
+            function destroySwiper(elem) {
+              if (swiperInstance === null) return;
               swiperInstance.destroy();
               swiperInstance = null;
+
+              const element = document.querySelector(elem);
+              element.classList.remove("swiper");
+              console.log(element.children[0].children);
+              element.children[0].classList.remove("swiper-wrapper");
+              [].forEach.call(element.children[0].children, item => {
+                item.classList.remove("swiper-slide");
+              });
             }
 
+            console.log(window.innerWidth);
+
             function handleResize() {
-              if (window.innerWidth <= 768) {
+              if (device.type == "mobile") {
                 if (swiperInstance === null) {
                   initSwiper(".mobile-swiper");
                 }
@@ -237,6 +258,7 @@
                 destroySwiper(".mobile-swiper");
               }
             }
+            handleResize();
 
             window.addEventListener("resize", handleResize);
           });
@@ -264,7 +286,7 @@
       </section>
       <section class="content__function">
         <div class="inner">
-          <div class="content__title alignLeft">
+          <div class="content__title alignLeft mCenter">
             <span>주요 기능</span>
             <h3>Main <strong>Function</strong></h3>
             <h4>클라우드 네이티브/오픈소스</h4>
@@ -393,8 +415,9 @@
         </div>
       </section>
       <section class="content__flatform">
+        <span class="page__deco__text" style="bottom: 0; left: 0">OPEN SOURCE<br />PLATFORM</span>
         <div class="inner">
-          <div class="content__title alignLeft">
+          <div class="content__title alignLeft mCenter">
             <h4>오픈소스 플랫폼 구축</h4>
           </div>
           <div class="content__list">
@@ -543,6 +566,7 @@
               </div>
             </div>
           </div>
+          <span class="page__deco type3"></span>
         </div>
       </section>
     </main>
@@ -583,7 +607,7 @@
         <img src="/BI/assets/images/common/floating-qa.svg" alt="문의하기 버튼" />
         <span>문의하기</span>
       </button>
-      <button type="button">
+      <button type="button" onclick="goToTop()">
         <img src="/BI/assets/images/common/floating-up.svg" alt="맨 위로 버튼" />
         <span>TOP</span>
       </button>

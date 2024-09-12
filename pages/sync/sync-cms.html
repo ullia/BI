@@ -7,8 +7,11 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/BI/assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
+    <script src="/BI/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
     <script src="/BI/assets/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body data-type="detail">
     <!-- s : 스킵 -->
@@ -18,7 +21,7 @@
     <!-- e : 스킵 -->
 
     <header class="bi__header">
-      <a href="/index.html" class="bi__logo"
+      <a href="/BI/index.html" class="bi__logo"
         ><img src="/BI/assets/images/common/bi-logo.png" alt="베이직 인터내셔널 로고"
       /></a>
       <nav class="bi__tabs forWeb">
@@ -61,53 +64,50 @@
 
     <main id="container" tabindex="0">
       <section class="content__banner">
-        <img src="/BI/assets/images/pages/sync_boot/banner.jpg" alt="" />
+        <figure>
+          <img src="/BI/assets/images/pages/sync_cms/banner.jpg" alt="" class="desktop-image" />
+          <img src="/BI/assets/images/pages/sync_cms/banner-m.jpg" alt="" class="mobile-image" />
+        </figure>
         <div class="inner">
           <div class="banner__text">
-            <h2>SYNC <strong>BOOT</strong></h2>
-            <p>변화하는 비즈니스 환경 변화에 빠르게 대응하기 위한<br />마이크로서비스 플랫폼</p>
+            <h2>SYNC <strong>CMS</strong></h2>
+            <p>
+              돋보이는 확장성을 바탕으로<span class="mbr"></span> 서비스 개발의 생산성을<br />
+              높여주는 Content 관리 시스템
+            </p>
           </div>
         </div>
       </section>
-      <section class="content__service">
+      <section class="content__service sync-cms">
+        <span class="page__deco__text" style="top: 21%; left: 0">SYNC CMS</span>
+        <span class="page__deco__text" style="bottom: 0; right: 0">CONTENTS</span>
         <div class="inner">
           <h3>
-            오픈소스 기반으로 마이크로 서비스 아키텍처 컨테이너 운영 및 DevOps 플랫폼으로<br />
-            검증되고 안정적인 최적의 솔루션을 제공하는 <strong>개발/운영 플랫폼</strong>입니다.
+            확장 가능한 콘텐츠 모델과 단순 카테고리 관리가 아닌<br />
+            분류 관리를 통한 효율적인 <strong>서비스 개발 플랫폼</strong>입니다.
           </h3>
           <div class="service__wrap">
             <div>
               <div class="service-01">
-                <h4>Containers</h4>
-                <p>
-                  속도를 위한 가볍고 일관된 애플리케이션 제공<br />
-                  컨테이너 이미지 생성 및 레지스트리 등록<br />
-                  선택한 프라이빗 혹은 퍼블릭 클라우드에 배포
-                </p>
+                <h4>UI/UX</h4>
+                <p>자유로운 UI/UX 템플릿 개발 기능 제공</p>
               </div>
               <div class="service-02">
-                <h4>Apps Performance<br />Monitoring</h4>
-                <p>
-                  Celebrities<br />
-                  Landmarks
-                </p>
+                <h4>Customizing</h4>
+                <p>모듈 방식의 설계로 서비스별 세부적인 맞춤 설계 지원</p>
               </div>
             </div>
             <div>
               <div class="service-03">
-                <h4>DevOps</h4>
+                <h4>Contents</h4>
                 <p>
-                  속도 및 확장을 위한 개발, 테스트, 스테이지, 운영,<br />
-                  자동화, CI/CD 파이프라인을 통한 마이크로 서비스 배포
+                  자유로운 콘텐츠 모델 설계 기능 제공을 통한<br />
+                  유연한 구조
                 </p>
               </div>
               <div class="service-04">
-                <h4>Microservices</h4>
-                <p>
-                  복잡한 모놀리식 애플리케이션을 분해하여 비즈니스<br />
-                  요구에 집중하기 위한 15가지 요소를 기반으로 하는<br />
-                  마이크로 서비스 구축
-                </p>
+                <h4>Structure</h4>
+                <p>고객의 요구에 맞는 다양한 구조 변경 가능</p>
               </div>
             </div>
           </div>
@@ -121,67 +121,155 @@
             <h3>Main <strong>Features</strong></h3>
           </div>
 
-          <ul class="feature_wrap">
-            <li>
-              <img src="/BI/assets/images/pages/sync_boot/feature-01.png" alt="" />
-              <h4>오픈소스 기반<br />MSA 플랫폼</h4>
-              <p>
-                현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                자동화된 개발/배포<br />
-                다양한 모니터링 환경 제공<br />
-                특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
-              </p>
-            </li>
-            <li>
-              <img src="/BI/assets/images/pages/sync_boot/feature-02.png" alt="" />
-              <h4>검증된 솔루션</h4>
-              <p>
-                현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                자동화된 개발/배포<br />
-              </p>
-            </li>
-            <li>
-              <img src="/BI/assets/images/pages/sync_boot/feature-03.png" alt="" />
-              <h4>부가기능 및<br />SLA 보장</h4>
-              <p>
-                현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                자동화된 개발/배포<br />
-                다양한 모니터링 환경 제공<br />
-                특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
-              </p>
-            </li>
-            <li>
-              <img src="/BI/assets/images/pages/sync_boot/feature-04.png" alt="" />
-              <h4>모듈화된<br />설계</h4>
-              <p>
-                현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                자동화된 개발/배포<br />
-                다양한 모니터링 환경 제공<br />
-                특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
-              </p>
-            </li>
-            <li>
-              <img src="/BI/assets/images/pages/sync_boot/feature-05.png" alt="" />
-              <h4>확장성</h4>
-              <p>
-                현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                자동화된 개발/배포<br />
-                다양한 모니터링 환경 제공<br />
-                특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
-              </p>
-            </li>
-            <li>
-              <img src="/BI/assets/images/pages/sync_boot/feature-06.png" alt="" />
-              <h4>E2E 솔루션</h4>
-              <p>
-                현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                자동화된 개발/배포<br />
-                다양한 모니터링 환경 제공<br />
-                특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
-              </p>
-            </li>
-          </ul>
+          <div class="keywords">
+            <p>
+              애플리케이션의 확장을 용이하게 하고 개발 속도를 앞당겨<br />
+              혁신을 실현하고, 새로운 기능의 출시 시간을 단축합니다.
+            </p>
+            <ul>
+              <li>SEO</li>
+              <li>반응 수집</li>
+              <li>자유로운 템플릿</li>
+              <li>모바일/웹/태블릿</li>
+              <li>동적 콘텐츠 서비스</li>
+              <li>표준 연동 API 제공</li>
+              <li>다국어 서비스 최적화</li>
+              <li>안전한 파일 배포 서비스</li>
+              <li>동적 메타데이터</li>
+            </ul>
+          </div>
+
+          <div class="mobile-swiper">
+            <ul class="feature_wrap">
+              <li class="">
+                <img src="/BI/assets/images/pages/sync_boot/feature-01.png" alt="" />
+                <h4>오픈소스 기반<br />MSA 플랫폼</h4>
+                <p>
+                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
+                  자동화된 개발/배포<br />
+                  다양한 모니터링 환경 제공<br />
+                  특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
+                </p>
+              </li>
+              <li class="">
+                <img src="/BI/assets/images/pages/sync_boot/feature-02.png" alt="" />
+                <h4>검증된 솔루션</h4>
+                <p>
+                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
+                  자동화된 개발/배포<br />
+                </p>
+              </li>
+              <li class="">
+                <img src="/BI/assets/images/pages/sync_boot/feature-03.png" alt="" />
+                <h4>부가기능 및<br />SLA 보장</h4>
+                <p>
+                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
+                  자동화된 개발/배포<br />
+                  다양한 모니터링 환경 제공<br />
+                  특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
+                </p>
+              </li>
+              <li class="">
+                <img src="/BI/assets/images/pages/sync_boot/feature-04.png" alt="" />
+                <h4>모듈화된<br />설계</h4>
+                <p>
+                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
+                  자동화된 개발/배포<br />
+                  다양한 모니터링 환경 제공<br />
+                  특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
+                </p>
+              </li>
+              <li class="">
+                <img src="/BI/assets/images/pages/sync_boot/feature-05.png" alt="" />
+                <h4>확장성</h4>
+                <p>
+                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
+                  자동화된 개발/배포<br />
+                  다양한 모니터링 환경 제공<br />
+                  특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
+                </p>
+              </li>
+              <li class="">
+                <img src="/BI/assets/images/pages/sync_boot/feature-06.png" alt="" />
+                <h4>E2E 솔루션</h4>
+                <p>
+                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
+                  자동화된 개발/배포<br />
+                  다양한 모니터링 환경 제공<br />
+                  특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
+                </p>
+              </li>
+            </ul>
+            <div class="swiper-controls">
+              <div class="swiper-pagination"></div>
+              <div class="swiper-navigator">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div>
+            </div>
+          </div>
+          <span class="page__deco type2"></span>
         </div>
+        <script>
+          window.addEventListener("DOMContentLoaded", function () {
+            var swiperInstance = null;
+
+            function initSwiper(elem) {
+              if (swiperInstance === null) {
+                const element = document.querySelector(elem);
+                element.classList.add("swiper");
+                console.log(element.children[0].children);
+                element.children[0].classList.add("swiper-wrapper");
+                [].forEach.call(element.children[0].children, item => {
+                  item.classList.add("swiper-slide");
+                });
+
+                swiperInstance = new Swiper(".swiper", {
+                  slidesPerView: 1,
+                  loop: true,
+                  pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                    type: "progressbar",
+                  },
+                  navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                  },
+                });
+              }
+            }
+
+            function destroySwiper(elem) {
+              if (swiperInstance === null) return;
+              swiperInstance.destroy();
+              swiperInstance = null;
+
+              const element = document.querySelector(elem);
+              element.classList.remove("swiper");
+              console.log(element.children[0].children);
+              element.children[0].classList.remove("swiper-wrapper");
+              [].forEach.call(element.children[0].children, item => {
+                item.classList.remove("swiper-slide");
+              });
+            }
+
+            console.log(window.innerWidth);
+
+            function handleResize() {
+              if (device.type == "mobile") {
+                if (swiperInstance === null) {
+                  initSwiper(".mobile-swiper");
+                }
+              } else {
+                destroySwiper(".mobile-swiper");
+              }
+            }
+            handleResize();
+
+            window.addEventListener("resize", handleResize);
+          });
+        </script>
       </section>
       <section class="content__composition">
         <div class="inner">
@@ -205,7 +293,7 @@
       </section>
       <section class="content__function">
         <div class="inner">
-          <div class="content__title alignLeft">
+          <div class="content__title alignLeft mCenter">
             <span>주요 기능</span>
             <h3>Main <strong>Function</strong></h3>
             <h4>클라우드 네이티브/오픈소스</h4>
@@ -334,8 +422,9 @@
         </div>
       </section>
       <section class="content__flatform">
+        <span class="page__deco__text" style="bottom: 0; left: 0">ABCDEFG HIJ<br />KLMNOPQ</span>
         <div class="inner">
-          <div class="content__title alignLeft">
+          <div class="content__title alignLeft mCenter">
             <h4>오픈소스 플랫폼 구축</h4>
           </div>
           <div class="content__list">
@@ -484,6 +573,7 @@
               </div>
             </div>
           </div>
+          <span class="page__deco type3"></span>
         </div>
       </section>
     </main>
@@ -524,7 +614,7 @@
         <img src="/BI/assets/images/common/floating-qa.svg" alt="문의하기 버튼" />
         <span>문의하기</span>
       </button>
-      <button type="button">
+      <button type="button" onclick="goToTop()">
         <img src="/BI/assets/images/common/floating-up.svg" alt="맨 위로 버튼" />
         <span>TOP</span>
       </button>

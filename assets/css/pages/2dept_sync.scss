@@ -29,14 +29,40 @@ section {
     height: 90px;
     border-radius: 45px;
     transition: all 0.4s ease;
+    z-index: 1;
     &.type1 {
       height: 180px;
       top: -90px;
       right: 60px;
       background-color: $sign-color;
       transform: rotate(25deg);
-      z-index: 1;
     }
+    &.type2 {
+      width: 110px;
+      height: 110px;
+      bottom: -55px;
+      left: 25%;
+      border-radius: 50%;
+      background-color: #c0ded8;
+    }
+    &.type3 {
+      height: 180px;
+      bottom: -90px;
+      right: 15%;
+      background-color: #1685b2;
+      transform: rotate(25deg);
+    }
+  }
+  .page__deco__text {
+    position: absolute;
+    width: max-content;
+    color: darken($white-color, 20%);
+    font-family: $pretendard-font;
+    font-weight: 700;
+    font-size: 8.333vw;
+    line-height: 1em;
+    opacity: 0.6;
+    z-index: 0;
   }
   &.content__banner {
     overflow: hidden;
@@ -78,6 +104,44 @@ section {
       font-size: 24px;
       line-height: 1.4em;
     }
+    &.sync-boot .service__wrap > div > div {
+      &.service-01 {
+        background: url("/BI/assets/images/pages/sync_boot/service-01.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+      &.service-02 {
+        background: url("/BI/assets/images/pages/sync_boot/service-02.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+      &.service-03 {
+        background: url("/BI/assets/images/pages/sync_boot/service-03.png") 0 0 no-repeat;
+        background-size: 100% auto;
+        border-top-right-radius: 50px;
+      }
+      &.service-04 {
+        background: url("/BI/assets/images/pages/sync_boot/service-04.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+    }
+    &.sync-cms .service__wrap > div > div {
+      &.service-01 {
+        background: url("/BI/assets/images/pages/sync_cms/service-01.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+      &.service-02 {
+        background: url("/BI/assets/images/pages/sync_cms/service-02.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+      &.service-03 {
+        background: url("/BI/assets/images/pages/sync_cms/service-03.png") 0 0 no-repeat;
+        background-size: 100% auto;
+        border-top-right-radius: 50px;
+      }
+      &.service-04 {
+        background: url("/BI/assets/images/pages/sync_cms/service-04.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+    }
     .service__wrap {
       margin-top: 120px;
       overflow: hidden;
@@ -96,24 +160,6 @@ section {
           flex-direction: column;
           padding: 60px;
           color: $white-color;
-          &.service-01 {
-            background: url("/BI/assets/images/pages/sync_boot/service-01.png") 0 0 no-repeat;
-            background-size: 100% auto;
-          }
-          &.service-02 {
-            background: url("/BI/assets/images/pages/sync_boot/service-02.png") 0 0 no-repeat;
-            background-size: 100% auto;
-          }
-          &.service-03 {
-            background: url("/BI/assets/images/pages/sync_boot/service-03.png") 0 0 no-repeat;
-            background-size: 100% auto;
-            border-top-right-radius: 50px;
-          }
-          &.service-04 {
-            background: url("/BI/assets/images/pages/sync_boot/service-04.png") 0 0 no-repeat;
-            background-size: 100% auto;
-          }
-
           h4 {
             font-family: $pretendard-font;
             font-size: 40px;
@@ -131,12 +177,42 @@ section {
   &.content__feature {
     background: url("/BI/assets/images/pages/sync_boot/feature-bg.jpg") 0 0 no-repeat;
     background-size: cover;
+    .keywords {
+      margin-top: 60px;
+      p {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1.4em;
+      }
+      ul {
+        margin: 40px auto 0;
+        display: flex;
+        @include flex-align(center, center);
+        flex-wrap: wrap;
+        width: 50%;
+        li {
+          display: flex;
+          flex: 0 0 auto;
+          @include flex-align(center, center);
+          margin: 4px;
+          padding: 4px 12px;
+          background-color: $white-color;
+          border: 1px solid $gray2-color;
+          border-radius: 15px;
+          font-size: 16px;
+          color: #666;
+        }
+      }
+    }
     ul.feature_wrap {
-      margin: 100px 0 86px;
+      margin: 100px auto 86px;
+      width: fit-content;
       border: 1px solid $gray-color;
       display: flex;
       li {
         padding: 60px 40px;
+        max-width: 14.271vw;
         border-right: 1px solid $gray-color;
         text-align: center;
         background-color: $white-color;
@@ -167,6 +243,9 @@ section {
           line-height: 1.4em;
         }
       }
+    }
+    .swiper-controls {
+      display: none;
     }
   }
   &.content__composition {
@@ -370,7 +449,7 @@ section {
                   position: relative;
                   font-size: 14px;
                   border-top: 1px solid $gray2-color;
-                  background-color: $gray2-color;
+                  background-color: #f4f4f4;
                   &::after {
                     display: inline-block;
                     content: "";
@@ -461,6 +540,16 @@ section {
       &.type1 {
         height: 12.5vw;
         top: -6.25vw;
+        right: 4.167vw;
+      }
+      &.type2 {
+        width: 7.639vw;
+        height: 7.639vw;
+        bottom: -3.819vw;
+      }
+      &.type3 {
+        height: 12.5vw;
+        bottom: -6.25vw;
         right: 4.167vw;
       }
     }
@@ -859,6 +948,9 @@ section {
         padding-top: 1.282vw;
         font-size: 4.615vw;
       }
+      &.mCenter {
+        text-align: center;
+      }
     }
     &.content__banner {
       .banner__text {
@@ -911,27 +1003,200 @@ section {
       }
     }
     &.content__feature {
-      background: url("/BI/assets/images/pages/sync_boot/feature-bg.jpg") 0 0 no-repeat;
-      background-size: auto 100%;
+      overflow: hidden;
+      background: #f4f4f4;
       ul.feature_wrap {
         margin: 10.256vw auto;
-        display: flex;
-        flex-wrap: nowrap;
-
+        flex-wrap: initial;
+        border: 0 none;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
         li {
           flex: 0 0 auto;
-          padding: 3.472vw 2.083vw;
+          width: 85.897vw;
+          max-width: 100%;
+          height: 117.949vw;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          @include flex-align(center, center);
+          border: 0 none;
+          color: $white-color;
+          background: linear-gradient(28deg, rgb(22, 133, 178) 0%, rgb(12, 158, 134) 100%);
+
           &:hover {
-            transform: scale(1.2);
-            border-top-right-radius: 2.083vw;
+            transform: scale(1);
+          }
+          &.swiper-slide-active {
+            transition: all 0.2s ease-in;
+            // transition-delay: 1s;
+            border-top-right-radius: 12.821vw;
           }
           h4 {
-            padding: 1.389vw 0;
+            padding: 10.256vw 0 5.128vw;
             min-height: 6.667vw;
-            font-size: 1.389vw;
+            font-size: 5.128vw;
           }
           p {
-            font-size: 0.972vw;
+            font-size: 3.59vw;
+            margin: 0 20vw;
+          }
+        }
+      }
+      .swiper-controls {
+        position: relative;
+        display: flex;
+        @include flex-align(space-between, center);
+        width: 100%;
+        height: 13.846vw;
+        .swiper-pagination {
+          position: unset;
+          width: 60%;
+          height: 2px;
+          background-color: #e8e8e8;
+          .swiper-pagination-progressbar-fill {
+            background-color: #222222;
+          }
+        }
+        .swiper-navigator {
+          display: flex;
+          > div {
+            width: 13.846vw;
+            height: 13.846vw;
+            border: 1px solid $gray2-color;
+            position: unset;
+            margin: 0;
+            &::after {
+              font-size: 6vw;
+              font-weight: 700;
+              color: #666666;
+            }
+          }
+          .swiper-button-prev {
+          }
+          .swiper-button-next {
+          }
+        }
+      }
+    }
+    &.content__composition {
+      .diagram {
+        max-width: 100%;
+        width: 100%;
+        margin: 10.256vw 0 2vw;
+      }
+    }
+    &.content__function {
+      flex-direction: column;
+      .inner {
+        display: flex;
+        flex-direction: column;
+      }
+      .content__title {
+        width: 100%;
+        h4 {
+          padding-top: 3.59vw;
+        }
+      }
+      .content__dial {
+        width: 100%;
+        .dial__wrap {
+          position: relative;
+          margin: 10.256vw 0 4.167vw;
+          width: 80.769vw;
+          height: 80.769vw;
+          background: url("/BI/assets/images/pages/sync_boot/dial.png") center center no-repeat;
+          background-size: 83% auto;
+          button {
+            width: 6.667vw;
+            height: 6.667vw;
+            &::after {
+              width: 2.051vw;
+              height: 2.051vw;
+            }
+            .btn__inner {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .dial__desc {
+        position: unset;
+        width: 100%;
+        height: auto;
+        padding: 7.692vw;
+        border-top-right-radius: 2.604vw;
+        .desc__wrap {
+          width: 100%;
+          position: unset;
+        }
+        ul {
+          li {
+            h4 {
+              font-size: 4.615vw;
+            }
+            p {
+              &.title {
+                padding: 5.128vw 0 3.59vw;
+                font-size: 6.154vw;
+              }
+              &.desc {
+                font-size: 3.846vw;
+              }
+            }
+          }
+        }
+        .pagenation {
+          margin-top: 10.256vw;
+          span {
+            font-size: 3.846vw;
+            &.divide {
+              margin: 0 1.282vw;
+              width: 30px;
+              height: 2px;
+            }
+          }
+        }
+      }
+    }
+    &.content__flatform {
+      .content__list {
+        margin: 10.256vw 0;
+        flex-direction: column;
+        @include flex-align(center, start);
+        .item {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 5.128vw;
+          .head {
+            padding: 3.846vw;
+            font-size: 4.103vw;
+          }
+          .body {
+            padding: 5.128vw;
+            ul {
+              li {
+                margin-bottom: 5.128vw;
+
+                &:last-child {
+                  margin-bottom: 0;
+                }
+                span {
+                  &.category {
+                    padding: 3.077vw 7.692vw;
+                    font-size: 4.103vw;
+                  }
+                  &.name {
+                    padding: 2.564vw 7.692vw;
+                    font-size: 3.59vw;
+                    &::after {
+                      width: 2.564vw;
+                      height: 2.564vw;
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }

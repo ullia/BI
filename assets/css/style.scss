@@ -138,6 +138,7 @@ nav.bi__nav {
 main {
   width: 100%;
   section {
+    position: relative;
     display: flex;
     @include flex-align(center, center);
     &.fullHeight {
@@ -273,6 +274,7 @@ footer {
     display: flex;
     flex-direction: column;
     @include flex-align(center, center);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
     &:nth-child(2n) {
       background-color: $sign-color;
       > * {

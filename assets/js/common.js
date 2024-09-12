@@ -14,7 +14,6 @@ const gnb = {
   btnMenu: null,
   btnClose: null,
   init: function () {
-    console.log("...");
     gnb.header = document.querySelector(".bi__header");
     gnb.nav = document.querySelector(".bi__nav");
     gnb.tabs = document.querySelector(".bi__tabs");
@@ -118,9 +117,15 @@ const dialObj = {
       btn.style.transform = transformTemp;
       btn.childNodes[1].style.transform = transformTemp2;
     });
-    console.log(standard.toFixed(4) * 1);
+    // console.log(standard.toFixed(4) * 1);
   },
 };
+
+// go to top
+function goToTop() {
+  $("html, body").animate({ scrollTop: 0 }, 800);
+  return false;
+}
 
 //window.addEventListener("scroll", function () {
 //  let pos = window.scrollY;
@@ -132,7 +137,7 @@ const dialObj = {
 window.addEventListener("DOMContentLoaded", function () {
   device.init();
   gnb.init();
-  dialObj.init();
+  if (gnb.pageType === "detail" && dialObj.dial === null) dialObj.init();
 });
 
 window.addEventListener("resize", function () {

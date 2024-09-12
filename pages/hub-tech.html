@@ -7,23 +7,12 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/BI/assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css"
-    />
+    <link rel="stylesheet" type="text/css" href="/BI/assets/css/jquery.fullpage.css" />
 
     <!-- JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-    ></script>
+    <script src="/BI/assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/BI/assets/js/common.js"></script>
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js"
-    ></script>
+    <script type="text/javascript" src="/BI/assets/js/jquery.fullpage.js"></script>
   </head>
   <body>
     <!-- s : 스킵 -->
@@ -33,7 +22,7 @@
     <!-- e : 스킵 -->
 
     <header class="bi__header">
-      <a href="/index.html" class="bi__logo"
+      <a href="/BI/index.html" class="bi__logo"
         ><img src="/BI/assets/images/common/bi-logo.png" alt="베이직 인터내셔널 로고"
       /></a>
       <nav class="bi__tabs forWeb">
@@ -179,7 +168,7 @@
         <img src="/BI/assets/images/common/floating-qa.svg" alt="문의하기 버튼" />
         <span>문의하기</span>
       </button>
-      <button type="button">
+      <button type="button" onclick="goToTop()">
         <img src="/BI/assets/images/common/floating-up.svg" alt="맨 위로 버튼" />
         <span>TOP</span>
       </button>
