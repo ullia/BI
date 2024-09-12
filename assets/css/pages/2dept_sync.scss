@@ -1,5 +1,8 @@
 // 2depth detail page
 section {
+  .h100 {
+    height: 100px;
+  }
   .content__title {
     text-align: center;
     span {
@@ -179,6 +182,8 @@ section {
     background-size: cover;
     .keywords {
       margin-top: 60px;
+      padding-bottom: 90px;
+      background: url("/BI/assets/images/pages/sync_cms/keywords-bg.png") center 12px no-repeat;
       p {
         text-align: center;
         font-size: 24px;
@@ -190,13 +195,13 @@ section {
         display: flex;
         @include flex-align(center, center);
         flex-wrap: wrap;
-        width: 50%;
+        width: 55%;
         li {
           display: flex;
           flex: 0 0 auto;
           @include flex-align(center, center);
           margin: 4px;
-          padding: 4px 12px;
+          padding: 4px 16px;
           background-color: $white-color;
           border: 1px solid $gray2-color;
           border-radius: 15px;
@@ -206,11 +211,12 @@ section {
       }
     }
     ul.feature_wrap {
-      margin: 100px auto 86px;
+      margin: 0 auto 86px;
       width: fit-content;
       border: 1px solid $gray-color;
       display: flex;
       li {
+        flex: 1;
         padding: 60px 40px;
         max-width: 14.271vw;
         border-right: 1px solid $gray-color;
@@ -280,8 +286,6 @@ section {
       height: 600px;
       border: 1px solid $gray-color;
       border-radius: 50%;
-      background: url("/BI/assets/images/pages/sync_boot/dial.png") center center no-repeat;
-      background-size: 83% auto;
       button {
         position: absolute;
         top: 50%;
@@ -323,16 +327,29 @@ section {
           position: absolute;
           top: 50%;
           left: 50%;
-          width: 100px;
-          height: 90px;
+          width: fit-content;
+          height: fit-content;
           display: flex;
           flex-direction: column;
           @include flex-align(center, center);
           span {
+            padding-top: 10px;
             font-size: 24px;
             line-height: 1.2em;
           }
         }
+      }
+    }
+    &.sync-boot {
+      .dial__wrap {
+        background: url("/BI/assets/images/pages/sync_boot/dial.png") center center no-repeat;
+        background-size: 83% auto;
+      }
+    }
+    &.sync-cms {
+      .dial__wrap {
+        background: url("/BI/assets/images/pages/sync_cms/dial.png") center center no-repeat;
+        background-size: 83% auto;
       }
     }
     .dial__desc {
@@ -585,8 +602,27 @@ section {
     &.content__feature {
       background: url("/BI/assets/images/pages/sync_boot/feature-bg.jpg") 0 0 no-repeat;
       background-size: auto 100%;
+      .keywords {
+        margin-top: 4.167vw;
+        padding-bottom: 6.25vw;
+        background: url("/BI/assets/images/pages/sync_cms/keywords-bg.png") center 2.833vw no-repeat;
+        background-size: auto 100%;
+        p {
+          font-size: 1.667vw;
+        }
+        ul {
+          margin: 2.778vw auto 0;
+          width: 55%;
+          li {
+            margin: 0.278vw;
+            padding: 0.278vw 1.111vw;
+            border-radius: 1.111vw;
+            font-size: 1.111vw;
+          }
+        }
+      }
       ul.feature_wrap {
-        margin: 6.944vw auto 5.972vw;
+        margin: 0 auto 5.972vw;
         display: flex;
         flex-wrap: wrap;
         li {
@@ -623,8 +659,6 @@ section {
         margin: 6.944vw 0 4.167vw;
         width: 34.722vw;
         height: 34.722vw;
-        background: url("/BI/assets/images/pages/sync_boot/dial.png") center center no-repeat;
-        background-size: 83% auto;
         button {
           width: 3.333vw;
           height: 3.333vw;
@@ -786,7 +820,7 @@ section {
       background: url("/BI/assets/images/pages/sync_boot/feature-bg.jpg") 0 0 no-repeat;
       background-size: auto 100%;
       ul.feature_wrap {
-        margin: 6.944vw auto 5.972vw;
+        margin: 0 auto 5.972vw;
         display: flex;
         flex-wrap: wrap;
         li {
@@ -823,8 +857,6 @@ section {
         margin: 6.944vw 0 4.167vw;
         width: 34.722vw;
         height: 34.722vw;
-        background: url("/BI/assets/images/pages/sync_boot/dial.png") center center no-repeat;
-        background-size: 83% auto;
         button {
           width: 3.333vw;
           height: 3.333vw;
@@ -933,6 +965,9 @@ section {
 // 모바일 ~767
 @include mobile {
   section {
+    .h100 {
+      height: 10.256vw;
+    }
     .inner {
       padding: 12.821vw 5.128vw !important;
     }
@@ -1005,8 +1040,27 @@ section {
     &.content__feature {
       overflow: hidden;
       background: #f4f4f4;
+      .keywords {
+        margin-top: 10.256vw;
+        padding-bottom: 6.25vw;
+        background: url("/BI/assets/images/pages/sync_cms/keywords-bg.png") center 2.833vw no-repeat;
+        background-size: auto 100%;
+        p {
+          font-size: 4.615vw;
+        }
+        ul {
+          margin: 5.128vw auto 0;
+          width: 100%;
+          li {
+            margin: 1.026vw;
+            padding: 1.026vw 4.103vw;
+            border-radius: 4.103vw;
+            font-size: 3.59vw;
+          }
+        }
+      }
       ul.feature_wrap {
-        margin: 10.256vw auto;
+        margin: 0 auto 10.256vw;
         flex-wrap: initial;
         border: 0 none;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
@@ -1104,8 +1158,6 @@ section {
           margin: 10.256vw 0 4.167vw;
           width: 80.769vw;
           height: 80.769vw;
-          background: url("/BI/assets/images/pages/sync_boot/dial.png") center center no-repeat;
-          background-size: 83% auto;
           button {
             width: 6.667vw;
             height: 6.667vw;

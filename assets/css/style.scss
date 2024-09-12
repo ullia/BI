@@ -35,6 +35,9 @@ body {
   display: none;
 }
 
+.pbr {
+  display: block;
+}
 .mbr {
   display: inline-block;
 }
@@ -329,6 +332,9 @@ footer {
   }
   .mobile-image {
     display: block;
+  }
+  .pbr {
+    display: inline-block;
   }
   .mbr {
     display: block;

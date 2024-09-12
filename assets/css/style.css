@@ -235,6 +235,9 @@
     height: 18px;
   }
 }
+section .h100 {
+  height: 100px;
+}
 section .content__title {
   text-align: center;
 }
@@ -410,6 +413,8 @@ section.content__feature {
 }
 section.content__feature .keywords {
   margin-top: 60px;
+  padding-bottom: 90px;
+  background: url("/BI/assets/images/pages/sync_cms/keywords-bg.png") center 12px no-repeat;
 }
 section.content__feature .keywords p {
   text-align: center;
@@ -423,7 +428,7 @@ section.content__feature .keywords ul {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 50%;
+  width: 55%;
 }
 section.content__feature .keywords ul li {
   display: flex;
@@ -431,7 +436,7 @@ section.content__feature .keywords ul li {
   justify-content: center;
   align-items: center;
   margin: 4px;
-  padding: 4px 12px;
+  padding: 4px 16px;
   background-color: #ffffff;
   border: 1px solid #dddddd;
   border-radius: 15px;
@@ -439,13 +444,14 @@ section.content__feature .keywords ul li {
   color: #666;
 }
 section.content__feature ul.feature_wrap {
-  margin: 100px auto 86px;
+  margin: 0 auto 86px;
   width: -moz-fit-content;
   width: fit-content;
   border: 1px solid #cccccc;
   display: flex;
 }
 section.content__feature ul.feature_wrap li {
+  flex: 1;
   padding: 60px 40px;
   max-width: 14.271vw;
   border-right: 1px solid #cccccc;
@@ -512,8 +518,6 @@ section.content__function .dial__wrap {
   height: 600px;
   border: 1px solid #cccccc;
   border-radius: 50%;
-  background: url("/BI/assets/images/pages/sync_boot/dial.png") center center no-repeat;
-  background-size: 83% auto;
 }
 section.content__function .dial__wrap button {
   position: absolute;
@@ -556,16 +560,27 @@ section.content__function .dial__wrap button .btn__inner {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100px;
-  height: 90px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 section.content__function .dial__wrap button .btn__inner span {
+  padding-top: 10px;
   font-size: 24px;
   line-height: 1.2em;
+}
+section.content__function.sync-boot .dial__wrap {
+  background: url("/BI/assets/images/pages/sync_boot/dial.png") center center no-repeat;
+  background-size: 83% auto;
+}
+section.content__function.sync-cms .dial__wrap {
+  background: url("/BI/assets/images/pages/sync_cms/dial.png") center center no-repeat;
+  background-size: 83% auto;
 }
 section.content__function .dial__desc {
   position: absolute;
@@ -798,8 +813,27 @@ section.content__flatform .content__list .item .body ul li span.name.type15::aft
     background: url("/BI/assets/images/pages/sync_boot/feature-bg.jpg") 0 0 no-repeat;
     background-size: auto 100%;
   }
+  section.content__feature .keywords {
+    margin-top: 4.167vw;
+    padding-bottom: 6.25vw;
+    background: url("/BI/assets/images/pages/sync_cms/keywords-bg.png") center 2.833vw no-repeat;
+    background-size: auto 100%;
+  }
+  section.content__feature .keywords p {
+    font-size: 1.667vw;
+  }
+  section.content__feature .keywords ul {
+    margin: 2.778vw auto 0;
+    width: 55%;
+  }
+  section.content__feature .keywords ul li {
+    margin: 0.278vw;
+    padding: 0.278vw 1.111vw;
+    border-radius: 1.111vw;
+    font-size: 1.111vw;
+  }
   section.content__feature ul.feature_wrap {
-    margin: 6.944vw auto 5.972vw;
+    margin: 0 auto 5.972vw;
     display: flex;
     flex-wrap: wrap;
   }
@@ -832,8 +866,6 @@ section.content__flatform .content__list .item .body ul li span.name.type15::aft
     margin: 6.944vw 0 4.167vw;
     width: 34.722vw;
     height: 34.722vw;
-    background: url("/BI/assets/images/pages/sync_boot/dial.png") center center no-repeat;
-    background-size: 83% auto;
   }
   section.content__function .dial__wrap button {
     width: 3.333vw;
@@ -970,7 +1002,7 @@ section.content__flatform .content__list .item .body ul li span.name.type15::aft
     background-size: auto 100%;
   }
   section.content__feature ul.feature_wrap {
-    margin: 6.944vw auto 5.972vw;
+    margin: 0 auto 5.972vw;
     display: flex;
     flex-wrap: wrap;
   }
@@ -1003,8 +1035,6 @@ section.content__flatform .content__list .item .body ul li span.name.type15::aft
     margin: 6.944vw 0 4.167vw;
     width: 34.722vw;
     height: 34.722vw;
-    background: url("/BI/assets/images/pages/sync_boot/dial.png") center center no-repeat;
-    background-size: 83% auto;
   }
   section.content__function .dial__wrap button {
     width: 3.333vw;
@@ -1095,6 +1125,9 @@ section.content__flatform .content__list .item .body ul li span.name.type15::aft
   }
 }
 @media (max-width: 767px) {
+  section .h100 {
+    height: 10.256vw;
+  }
   section .inner {
     padding: 12.821vw 5.128vw !important;
   }
@@ -1160,8 +1193,27 @@ section.content__flatform .content__list .item .body ul li span.name.type15::aft
     overflow: hidden;
     background: #f4f4f4;
   }
+  section.content__feature .keywords {
+    margin-top: 10.256vw;
+    padding-bottom: 6.25vw;
+    background: url("/BI/assets/images/pages/sync_cms/keywords-bg.png") center 2.833vw no-repeat;
+    background-size: auto 100%;
+  }
+  section.content__feature .keywords p {
+    font-size: 4.615vw;
+  }
+  section.content__feature .keywords ul {
+    margin: 5.128vw auto 0;
+    width: 100%;
+  }
+  section.content__feature .keywords ul li {
+    margin: 1.026vw;
+    padding: 1.026vw 4.103vw;
+    border-radius: 4.103vw;
+    font-size: 3.59vw;
+  }
   section.content__feature ul.feature_wrap {
-    margin: 10.256vw auto;
+    margin: 0 auto 10.256vw;
     flex-wrap: initial;
     border: 0 none;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
@@ -1254,8 +1306,6 @@ section.content__flatform .content__list .item .body ul li span.name.type15::aft
     margin: 10.256vw 0 4.167vw;
     width: 80.769vw;
     height: 80.769vw;
-    background: url("/BI/assets/images/pages/sync_boot/dial.png") center center no-repeat;
-    background-size: 83% auto;
   }
   section.content__function .content__dial .dial__wrap button {
     width: 6.667vw;
@@ -1360,6 +1410,10 @@ body {
 
 .mobile-image {
   display: none;
+}
+
+.pbr {
+  display: block;
 }
 
 .mbr {
@@ -1655,6 +1709,9 @@ footer .footer__inner .footer__copyright {
   }
   .mobile-image {
     display: block;
+  }
+  .pbr {
+    display: inline-block;
   }
   .mbr {
     display: block;
