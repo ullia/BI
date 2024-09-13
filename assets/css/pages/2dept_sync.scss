@@ -150,7 +150,11 @@ section {
       overflow: hidden;
       display: flex;
       flex-wrap: wrap;
-      > * {
+      > img {
+        width: 100%;
+        border-top-right-radius: 50px;
+      }
+      > div {
         flex: 1 1 50%;
         height: auto;
         &:first-child {
@@ -215,7 +219,7 @@ section {
       width: fit-content;
       border: 1px solid $gray-color;
       display: flex;
-      li {
+      > li {
         flex: 1;
         padding: 60px 40px;
         max-width: 14.271vw;
@@ -231,7 +235,8 @@ section {
           transition: all 0.2s ease-in;
           border-top-right-radius: 30px;
           h4,
-          p {
+          p,
+          li {
             color: $white-color;
           }
         }
@@ -248,6 +253,15 @@ section {
           font-weight: 300;
           line-height: 1.4em;
         }
+        > ul {
+          li {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.4em;
+            text-align: center;
+            padding-bottom: 4px;
+          }
+        }
       }
     }
     .swiper-controls {
@@ -255,6 +269,12 @@ section {
     }
   }
   &.content__composition {
+    h4 {
+      padding-top: 40px;
+      font-size: 24px;
+      font-weight: 700;
+      text-align: center;
+    }
     .diagram {
       margin: 60px 0 50px;
       display: flex;
@@ -327,8 +347,8 @@ section {
           position: absolute;
           top: 50%;
           left: 50%;
-          width: fit-content;
-          height: fit-content;
+          width: 210px;
+          height: 90px;
           display: flex;
           flex-direction: column;
           @include flex-align(center, center);
@@ -366,59 +386,79 @@ section {
         position: absolute;
         top: 6.25vw;
         right: 3.208vw;
-      }
-      ul {
-        li {
-          display: none;
-          &.active {
-            display: block;
-          }
-          h4 {
-            display: flex;
-            @include flex-align(start, center);
-            font-size: 24px;
-            color: $sign-color;
-            font-weight: 500;
-            > img {
-              display: inline-block;
-              filter: invert(58%) sepia(52%) saturate(7064%) hue-rotate(148deg) brightness(90%)
-                contrast(89%);
-              margin-right: 10px;
+
+        > ul {
+          > li {
+            display: none;
+            &.active {
+              display: block;
             }
-          }
-          p {
-            &.title {
-              padding: 40px 0 20px;
-              font-size: 36px;
-              font-weight: 700;
-              line-height: 1.2em;
-              word-break: keep-all;
+            h4 {
+              display: flex;
+              @include flex-align(start, center);
+              font-size: 24px;
+              color: $sign-color;
+              font-weight: 500;
+              > img {
+                display: inline-block;
+                filter: invert(58%) sepia(52%) saturate(7064%) hue-rotate(148deg) brightness(90%)
+                  contrast(89%);
+                margin-right: 10px;
+              }
             }
-            &.desc {
-              font-size: 18px;
-              line-height: 1.3em;
+            p {
+              &.title {
+                padding: 40px 0 20px;
+                font-size: 36px;
+                font-weight: 700;
+                line-height: 1.2em;
+                word-break: keep-all;
+              }
+              &.desc {
+                font-size: 18px;
+                line-height: 1.3em;
+              }
+            }
+            ul {
+              li {
+                position: relative;
+                padding: 2px 0 2px 25px;
+                font-size: 18px;
+                line-height: 1.3em;
+                &::before {
+                  display: inline-block;
+                  content: "";
+                  width: 6px;
+                  height: 6px;
+                  position: absolute;
+                  top: 12px;
+                  left: 10px;
+                  border-radius: 50%;
+                  background-color: $black-color;
+                }
+              }
             }
           }
         }
-      }
-      .pagenation {
-        margin-top: 100px;
-        display: flex;
-        @include flex-align(start, center);
-        span {
-          font-size: 18px;
-          &.current {
-            font-weight: 700;
-          }
-          &.divide {
-            display: inline-block;
-            margin: 0 5px;
-            width: 30px;
-            height: 3px;
-            background-color: $black-color;
-          }
-          &.total {
-            color: $gray-color;
+        .pagenation {
+          margin-top: 100px;
+          display: flex;
+          @include flex-align(start, center);
+          span {
+            font-size: 18px;
+            &.current {
+              font-weight: 700;
+            }
+            &.divide {
+              display: inline-block;
+              margin: 0 5px;
+              width: 30px;
+              height: 3px;
+              background-color: $black-color;
+            }
+            &.total {
+              color: $gray-color;
+            }
           }
         }
       }
@@ -625,7 +665,7 @@ section {
         margin: 0 auto 5.972vw;
         display: flex;
         flex-wrap: wrap;
-        li {
+        > li {
           flex: 1;
           padding: 3.472vw 2.083vw;
           &:hover {
@@ -685,19 +725,19 @@ section {
         border-top-right-radius: 2.604vw;
         // padding: 6.25vw 5.208vw 6.25vw 12.5vw;
         .desc__wrap {
-          width: 310px;
+          width: 80%;
           position: absolute;
           top: 6.25vw;
-          right: 3.208vw;
+          right: 10%;
         }
         ul {
           li {
             h4 {
-              font-size: 1.389vw;
+              font-size: 1.667vw;
             }
             p {
               &.title {
-                padding: 40px 0 20px;
+                padding: 2.778vw 0 1.389vw;
                 font-size: 2.222vw;
               }
               &.desc {
@@ -823,7 +863,7 @@ section {
         margin: 0 auto 5.972vw;
         display: flex;
         flex-wrap: wrap;
-        li {
+        > li {
           flex: 1;
           padding: 3.472vw 2.083vw;
           &:hover {
@@ -879,34 +919,34 @@ section {
         bottom: 0;
         left: 0;
         width: 33.854vw;
-        height: 38.722vw;
+        height: 39.722vw;
         background: $white-color;
         border-top-right-radius: 2.604vw;
         // padding: 6.25vw 5.208vw 6.25vw 12.5vw;
         .desc__wrap {
-          width: 310px;
+          width: 80%;
           position: absolute;
-          top: 6.25vw;
-          right: 3.208vw;
+          top: 5.25vw;
+          right: 10%;
         }
         ul {
           li {
             h4 {
-              font-size: 1.389vw;
+              font-size: 1.875vw;
             }
             p {
               &.title {
-                padding: 40px 0 20px;
+                padding: 2.439vw 0 1.22vw;
                 font-size: 2.222vw;
               }
               &.desc {
-                font-size: 18px;
+                font-size: 1.406vw;
               }
             }
           }
         }
         .pagenation {
-          margin-top: 6.944vw;
+          margin-top: 4.944vw;
           span {
             font-size: 1.25vw;
             &.divide {
@@ -1064,7 +1104,7 @@ section {
         flex-wrap: initial;
         border: 0 none;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-        li {
+        > li {
           flex: 0 0 auto;
           width: 85.897vw;
           max-width: 100%;
