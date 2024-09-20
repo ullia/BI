@@ -104,6 +104,12 @@ section {
   &.content__service {
     h3 {
       text-align: center;
+      font-size: 34px;
+      font-weight: 700;
+      padding-bottom: 30px;
+    }
+    .service__desc {
+      text-align: center;
       font-size: 24px;
       line-height: 1.4em;
     }
@@ -119,7 +125,6 @@ section {
       &.service-03 {
         background: url("/BI/assets/images/pages/sync_boot/service-03.png") 0 0 no-repeat;
         background-size: 100% auto;
-        border-top-right-radius: 50px;
       }
       &.service-04 {
         background: url("/BI/assets/images/pages/sync_boot/service-04.png") 0 0 no-repeat;
@@ -138,10 +143,75 @@ section {
       &.service-03 {
         background: url("/BI/assets/images/pages/sync_cms/service-03.png") 0 0 no-repeat;
         background-size: 100% auto;
-        border-top-right-radius: 50px;
       }
       &.service-04 {
         background: url("/BI/assets/images/pages/sync_cms/service-04.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+    }
+    &.business-certification .service__wrap > div > div {
+      &.service-01 {
+        background: url("/BI/assets/images/pages/business_certification/service-01.png") 0 0
+          no-repeat;
+        background-size: 100% auto;
+      }
+      &.service-02 {
+        background: url("/BI/assets/images/pages/business_certification/service-02.png") 0 0
+          no-repeat;
+        background-size: 100% auto;
+      }
+      &.service-03 {
+        background: url("/BI/assets/images/pages/business_certification/service-03.png") 0 0
+          no-repeat;
+        background-size: 100% auto;
+      }
+      &.service-04 {
+        background: url("/BI/assets/images/pages/business_certification/service-04.png") 0 0
+          no-repeat;
+        background-size: 100% auto;
+      }
+    }
+    &.business-commerce .service__wrap > div > div {
+      &.service-01 {
+        background: url("/BI/assets/images/pages/business_commerce/service-01.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+      &.service-02 {
+        background: url("/BI/assets/images/pages/business_commerce/service-02.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+      &.service-03 {
+        background: url("/BI/assets/images/pages/business_commerce/service-03.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+      &.service-04 {
+        background: url("/BI/assets/images/pages/business_commerce/service-04.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+      &.service-05 {
+        background: url("/BI/assets/images/pages/business_commerce/service-05.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+      &.service-06 {
+        background: url("/BI/assets/images/pages/business_commerce/service-06.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+    }
+    &.business-cloud .service__wrap > div > div {
+      &.service-01 {
+        background: url("/BI/assets/images/pages/business_cloud/service-01.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+      &.service-02 {
+        background: url("/BI/assets/images/pages/business_cloud/service-02.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+      &.service-03 {
+        background: url("/BI/assets/images/pages/business_cloud/service-03.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+      &.service-04 {
+        background: url("/BI/assets/images/pages/business_cloud/service-04.png") 0 0 no-repeat;
         background-size: 100% auto;
       }
     }
@@ -159,6 +229,11 @@ section {
         height: auto;
         &:first-child {
           margin-top: 100px;
+        }
+        &:last-child {
+          > div:first-child {
+            border-top-right-radius: 50px;
+          }
         }
         > div {
           flex: 1;
@@ -279,10 +354,14 @@ section {
       margin: 60px 0 50px;
       display: flex;
       > img {
-        width: 100%;
+        margin: auto;
+        width: auto;
         height: auto;
         object-fit: cover;
       }
+    }
+    &:nth-of-type(odd) {
+      background-color: #f4f4f4;
     }
   }
   &.content__function {
@@ -572,6 +651,86 @@ section {
       }
     }
   }
+  &.content__introduce {
+    .content__tabs {
+      margin-top: 60px;
+      .tab__menu {
+        display: flex;
+        flex-wrap: nowrap;
+        button {
+          flex: 1;
+          padding: 10px;
+          width: auto;
+          border-bottom: 2px solid $gray2-color;
+          font-size: 20px;
+          font-weight: 400;
+          &.active {
+            font-weight: 700;
+            border-color: $black-color;
+          }
+        }
+      }
+      .tab__contents {
+        position: relative;
+        margin: 80px 0;
+        .item {
+          display: none;
+          width: 100%;
+          &.active {
+            display: flex;
+            flex-direction: column;
+            @include flex-align(center, center);
+          }
+          h4 {
+            font-size: 30px;
+            font-weight: 700;
+          }
+          > p {
+            padding-top: 30px;
+            font-size: 20px;
+            line-height: 1.4em;
+            text-align: center;
+          }
+          > img {
+            margin-top: 60px;
+          }
+          .cards {
+            margin-top: 60px;
+            display: flex;
+            li {
+              flex: 1;
+              margin-right: 40px;
+              padding: 20px 30px;
+              border: 1px solid $gray2-color;
+              border-top-right-radius: 50px;
+              box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+              .head-num {
+                font-size: 30px;
+                font-weight: 700;
+                padding-bottom: 10px;
+                margin-bottom: 30px;
+                border-bottom: 1px solid $gray2-color;
+                text-align: right;
+                color: $sign-color;
+              }
+              .title {
+                font-size: 20px;
+                font-weight: 700;
+                padding-bottom: 20px;
+              }
+              .desc {
+                font-size: 16px;
+                line-height: 1.3em;
+              }
+              &:last-child {
+                margin-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 // 데스크탑 소형 ~1440
@@ -616,12 +775,12 @@ section {
       }
     }
     &.content__service {
-      h3 {
+      .service__desc {
         font-size: 1.667vw;
       }
       .service__wrap {
         margin-top: 6.944vw;
-        > * {
+        > div {
           &:first-child {
             margin-top: 6.944vw;
           }
@@ -833,12 +992,12 @@ section {
       }
     }
     &.content__service {
-      h3 {
+      .service__desc {
         font-size: 1.875vw;
       }
       .service__wrap {
         margin-top: 6.944vw;
-        > * {
+        > div {
           &:first-child {
             margin-top: 6.944vw;
           }
@@ -1047,24 +1206,26 @@ section {
       }
     }
     &.content__service {
-      h3 {
+      .service__desc {
         font-size: 4.615vw;
       }
       .service__wrap {
         margin-top: 12.821vw;
         flex-direction: column;
-        > * {
+        > div {
           &:first-child {
             margin-top: 0;
+          }
+          &:last-child {
+            > div:first-child {
+              border-radius: 0;
+            }
           }
           > div {
             height: 53.846vw;
             padding: 5.128vw;
             &.service-01 {
               border-top-right-radius: 50px;
-            }
-            &.service-03 {
-              border-radius: 0;
             }
             h4 {
               font-size: 6.154vw;
@@ -1177,6 +1338,9 @@ section {
         max-width: 100%;
         width: 100%;
         margin: 10.256vw 0 2vw;
+        img {
+          width: 100%;
+        }
       }
     }
     &.content__function {

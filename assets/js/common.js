@@ -69,6 +69,8 @@ const dialObj = {
   Descs: null,
   init: function () {
     dialObj.dial = document.querySelector(".dial__wrap");
+    if (dialObj.dial === null) return;
+
     dialObj.bg = dialObj.dial.style.background;
     dialObj.size = dialObj.dial.offsetWidth;
     dialObj.btns = document.querySelectorAll(".dial__wrap button");

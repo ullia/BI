@@ -1,18 +1,52 @@
 // 1depth hub page
 #fullpage {
+  &.tech {
+    .section {
+      &.sec1 {
+        background: url("/BI/assets/images/pages/sync/bg-01.jpg") center center no-repeat;
+        background-size: cover;
+      }
+      &.sec2 {
+        background: url("/BI/assets/images/pages/sync/bg-02.jpg") center center no-repeat;
+        background-size: cover;
+      }
+      &.sec3 {
+        background: url("/BI/assets/images/pages/sync/bg-03.jpg") center center no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+  &.business {
+    .section {
+      &.sec1 {
+        background: url("/BI/assets/images/pages/business/bg-01.jpg") center center no-repeat;
+        background-size: cover;
+      }
+      &.sec2 {
+        background: url("/BI/assets/images/pages/business/bg-02.jpg") center center no-repeat;
+        background-size: cover;
+      }
+      &.sec3 {
+        background: url("/BI/assets/images/pages/business/bg-03.jpg") center center no-repeat;
+        background-size: cover;
+      }
+      &.sec4 {
+        background: url("/BI/assets/images/pages/business/bg-04.jpg") center center no-repeat;
+        background-size: cover;
+      }
+      &.sec5 {
+        background: url("/BI/assets/images/pages/business/bg-05.jpg") center center no-repeat;
+        background-size: cover;
+      }
+      &.sec6 {
+        background: url("/BI/assets/images/pages/business/bg-06.jpg") center center no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+  &.agency {
+  }
   .section {
-    &.sec1 {
-      background: url("/BI/assets/images/pages/sync/bg-01.jpg") center center no-repeat;
-      background-size: cover;
-    }
-    &.sec2 {
-      background: url("/BI/assets/images/pages/sync/bg-02.jpg") center center no-repeat;
-      background-size: cover;
-    }
-    &.sec3 {
-      background: url("/BI/assets/images/pages/sync/bg-03.jpg") center center no-repeat;
-      background-size: cover;
-    }
     .title_box {
       width: max-content;
       position: absolute;
@@ -62,7 +96,7 @@
           bottom: 0;
           width: 25px;
           height: 14px;
-          background: url("/BI/assets/images/pages/sync/arrow.png") center center no-repeat;
+          background: url("/BI/assets/images/pages/arrow.png") center center no-repeat;
           background-size: 100%;
         }
       }

@@ -1,15 +1,39 @@
 @charset "UTF-8";
 @import "./reset.css";
-#fullpage .section.sec1 {
+#fullpage.tech .section.sec1 {
   background: url("/BI/assets/images/pages/sync/bg-01.jpg") center center no-repeat;
   background-size: cover;
 }
-#fullpage .section.sec2 {
+#fullpage.tech .section.sec2 {
   background: url("/BI/assets/images/pages/sync/bg-02.jpg") center center no-repeat;
   background-size: cover;
 }
-#fullpage .section.sec3 {
+#fullpage.tech .section.sec3 {
   background: url("/BI/assets/images/pages/sync/bg-03.jpg") center center no-repeat;
+  background-size: cover;
+}
+#fullpage.business .section.sec1 {
+  background: url("/BI/assets/images/pages/business/bg-01.jpg") center center no-repeat;
+  background-size: cover;
+}
+#fullpage.business .section.sec2 {
+  background: url("/BI/assets/images/pages/business/bg-02.jpg") center center no-repeat;
+  background-size: cover;
+}
+#fullpage.business .section.sec3 {
+  background: url("/BI/assets/images/pages/business/bg-03.jpg") center center no-repeat;
+  background-size: cover;
+}
+#fullpage.business .section.sec4 {
+  background: url("/BI/assets/images/pages/business/bg-04.jpg") center center no-repeat;
+  background-size: cover;
+}
+#fullpage.business .section.sec5 {
+  background: url("/BI/assets/images/pages/business/bg-05.jpg") center center no-repeat;
+  background-size: cover;
+}
+#fullpage.business .section.sec6 {
+  background: url("/BI/assets/images/pages/business/bg-06.jpg") center center no-repeat;
   background-size: cover;
 }
 #fullpage .section .title_box {
@@ -64,7 +88,7 @@
   bottom: 0;
   width: 25px;
   height: 14px;
-  background: url("/BI/assets/images/pages/sync/arrow.png") center center no-repeat;
+  background: url("/BI/assets/images/pages/arrow.png") center center no-repeat;
   background-size: 100%;
 }
 #fullpage h1 {
@@ -339,6 +363,12 @@ section.content__banner .banner__text p {
 }
 section.content__service h3 {
   text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  padding-bottom: 30px;
+}
+section.content__service .service__desc {
+  text-align: center;
   font-size: 24px;
   line-height: 1.4em;
 }
@@ -353,7 +383,6 @@ section.content__service.sync-boot .service__wrap > div > div.service-02 {
 section.content__service.sync-boot .service__wrap > div > div.service-03 {
   background: url("/BI/assets/images/pages/sync_boot/service-03.png") 0 0 no-repeat;
   background-size: 100% auto;
-  border-top-right-radius: 50px;
 }
 section.content__service.sync-boot .service__wrap > div > div.service-04 {
   background: url("/BI/assets/images/pages/sync_boot/service-04.png") 0 0 no-repeat;
@@ -370,10 +399,65 @@ section.content__service.sync-cms .service__wrap > div > div.service-02 {
 section.content__service.sync-cms .service__wrap > div > div.service-03 {
   background: url("/BI/assets/images/pages/sync_cms/service-03.png") 0 0 no-repeat;
   background-size: 100% auto;
-  border-top-right-radius: 50px;
 }
 section.content__service.sync-cms .service__wrap > div > div.service-04 {
   background: url("/BI/assets/images/pages/sync_cms/service-04.png") 0 0 no-repeat;
+  background-size: 100% auto;
+}
+section.content__service.business-certification .service__wrap > div > div.service-01 {
+  background: url("/BI/assets/images/pages/business_certification/service-01.png") 0 0 no-repeat;
+  background-size: 100% auto;
+}
+section.content__service.business-certification .service__wrap > div > div.service-02 {
+  background: url("/BI/assets/images/pages/business_certification/service-02.png") 0 0 no-repeat;
+  background-size: 100% auto;
+}
+section.content__service.business-certification .service__wrap > div > div.service-03 {
+  background: url("/BI/assets/images/pages/business_certification/service-03.png") 0 0 no-repeat;
+  background-size: 100% auto;
+}
+section.content__service.business-certification .service__wrap > div > div.service-04 {
+  background: url("/BI/assets/images/pages/business_certification/service-04.png") 0 0 no-repeat;
+  background-size: 100% auto;
+}
+section.content__service.business-commerce .service__wrap > div > div.service-01 {
+  background: url("/BI/assets/images/pages/business_commerce/service-01.png") 0 0 no-repeat;
+  background-size: 100% auto;
+}
+section.content__service.business-commerce .service__wrap > div > div.service-02 {
+  background: url("/BI/assets/images/pages/business_commerce/service-02.png") 0 0 no-repeat;
+  background-size: 100% auto;
+}
+section.content__service.business-commerce .service__wrap > div > div.service-03 {
+  background: url("/BI/assets/images/pages/business_commerce/service-03.png") 0 0 no-repeat;
+  background-size: 100% auto;
+}
+section.content__service.business-commerce .service__wrap > div > div.service-04 {
+  background: url("/BI/assets/images/pages/business_commerce/service-04.png") 0 0 no-repeat;
+  background-size: 100% auto;
+}
+section.content__service.business-commerce .service__wrap > div > div.service-05 {
+  background: url("/BI/assets/images/pages/business_commerce/service-05.png") 0 0 no-repeat;
+  background-size: 100% auto;
+}
+section.content__service.business-commerce .service__wrap > div > div.service-06 {
+  background: url("/BI/assets/images/pages/business_commerce/service-06.png") 0 0 no-repeat;
+  background-size: 100% auto;
+}
+section.content__service.business-cloud .service__wrap > div > div.service-01 {
+  background: url("/BI/assets/images/pages/business_cloud/service-01.png") 0 0 no-repeat;
+  background-size: 100% auto;
+}
+section.content__service.business-cloud .service__wrap > div > div.service-02 {
+  background: url("/BI/assets/images/pages/business_cloud/service-02.png") 0 0 no-repeat;
+  background-size: 100% auto;
+}
+section.content__service.business-cloud .service__wrap > div > div.service-03 {
+  background: url("/BI/assets/images/pages/business_cloud/service-03.png") 0 0 no-repeat;
+  background-size: 100% auto;
+}
+section.content__service.business-cloud .service__wrap > div > div.service-04 {
+  background: url("/BI/assets/images/pages/business_cloud/service-04.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 section.content__service .service__wrap {
@@ -392,6 +476,9 @@ section.content__service .service__wrap > div {
 }
 section.content__service .service__wrap > div:first-child {
   margin-top: 100px;
+}
+section.content__service .service__wrap > div:last-child > div:first-child {
+  border-top-right-radius: 50px;
 }
 section.content__service .service__wrap > div > div {
   flex: 1;
@@ -508,10 +595,14 @@ section.content__composition .diagram {
   display: flex;
 }
 section.content__composition .diagram > img {
-  width: 100%;
+  margin: auto;
+  width: auto;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
+}
+section.content__composition:nth-of-type(odd) {
+  background-color: #f4f4f4;
 }
 section.content__function {
   background-color: #f4f4f4;
@@ -786,6 +877,85 @@ section.content__flatform .content__list .item .body ul li span.name.type14::aft
 section.content__flatform .content__list .item .body ul li span.name.type15::after {
   background-color: #b21616;
 }
+section.content__introduce .content__tabs {
+  margin-top: 60px;
+}
+section.content__introduce .content__tabs .tab__menu {
+  display: flex;
+  flex-wrap: nowrap;
+}
+section.content__introduce .content__tabs .tab__menu button {
+  flex: 1;
+  padding: 10px;
+  width: auto;
+  border-bottom: 2px solid #dddddd;
+  font-size: 20px;
+  font-weight: 400;
+}
+section.content__introduce .content__tabs .tab__menu button.active {
+  font-weight: 700;
+  border-color: #000000;
+}
+section.content__introduce .content__tabs .tab__contents {
+  position: relative;
+  margin: 80px 0;
+}
+section.content__introduce .content__tabs .tab__contents .item {
+  display: none;
+  width: 100%;
+}
+section.content__introduce .content__tabs .tab__contents .item.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section.content__introduce .content__tabs .tab__contents .item h4 {
+  font-size: 30px;
+  font-weight: 700;
+}
+section.content__introduce .content__tabs .tab__contents .item > p {
+  padding-top: 30px;
+  font-size: 20px;
+  line-height: 1.4em;
+  text-align: center;
+}
+section.content__introduce .content__tabs .tab__contents .item > img {
+  margin-top: 60px;
+}
+section.content__introduce .content__tabs .tab__contents .item .cards {
+  margin-top: 60px;
+  display: flex;
+}
+section.content__introduce .content__tabs .tab__contents .item .cards li {
+  flex: 1;
+  margin-right: 40px;
+  padding: 20px 30px;
+  border: 1px solid #dddddd;
+  border-top-right-radius: 50px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+section.content__introduce .content__tabs .tab__contents .item .cards li .head-num {
+  font-size: 30px;
+  font-weight: 700;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #dddddd;
+  text-align: right;
+  color: #0e998e;
+}
+section.content__introduce .content__tabs .tab__contents .item .cards li .title {
+  font-size: 20px;
+  font-weight: 700;
+  padding-bottom: 20px;
+}
+section.content__introduce .content__tabs .tab__contents .item .cards li .desc {
+  font-size: 16px;
+  line-height: 1.3em;
+}
+section.content__introduce .content__tabs .tab__contents .item .cards li:last-child {
+  margin-right: 0;
+}
 
 @media (max-width: 1439px) {
   section .content__title span {
@@ -822,23 +992,23 @@ section.content__flatform .content__list .item .body ul li span.name.type15::aft
   section.content__banner .banner__text {
     left: 40px;
   }
-  section.content__service h3 {
+  section.content__service .service__desc {
     font-size: 1.667vw;
   }
   section.content__service .service__wrap {
     margin-top: 6.944vw;
   }
-  section.content__service .service__wrap > *:first-child {
+  section.content__service .service__wrap > div:first-child {
     margin-top: 6.944vw;
   }
-  section.content__service .service__wrap > * > div {
+  section.content__service .service__wrap > div > div {
     height: 29vw;
     padding: 4.167vw;
   }
-  section.content__service .service__wrap > * > div h4 {
+  section.content__service .service__wrap > div > div h4 {
     font-size: 2.778vw;
   }
-  section.content__service .service__wrap > * > div p {
+  section.content__service .service__wrap > div > div p {
     padding-top: 1.389vw;
     font-size: 1.389vw;
   }
@@ -1010,23 +1180,23 @@ section.content__flatform .content__list .item .body ul li span.name.type15::aft
     padding-top: 20px;
     font-size: 1.25vw;
   }
-  section.content__service h3 {
+  section.content__service .service__desc {
     font-size: 1.875vw;
   }
   section.content__service .service__wrap {
     margin-top: 6.944vw;
   }
-  section.content__service .service__wrap > *:first-child {
+  section.content__service .service__wrap > div:first-child {
     margin-top: 6.944vw;
   }
-  section.content__service .service__wrap > * > div {
+  section.content__service .service__wrap > div > div {
     height: 27vw;
     padding: 4.167vw;
   }
-  section.content__service .service__wrap > * > div h4 {
+  section.content__service .service__wrap > div > div h4 {
     font-size: 3.125vw;
   }
-  section.content__service .service__wrap > * > div p {
+  section.content__service .service__wrap > div > div p {
     padding-top: 1.563vw;
     font-size: 1.563vw;
   }
@@ -1195,30 +1365,30 @@ section.content__flatform .content__list .item .body ul li span.name.type15::aft
     padding-top: 5.128vw;
     font-size: 4.615vw;
   }
-  section.content__service h3 {
+  section.content__service .service__desc {
     font-size: 4.615vw;
   }
   section.content__service .service__wrap {
     margin-top: 12.821vw;
     flex-direction: column;
   }
-  section.content__service .service__wrap > *:first-child {
+  section.content__service .service__wrap > div:first-child {
     margin-top: 0;
   }
-  section.content__service .service__wrap > * > div {
+  section.content__service .service__wrap > div:last-child > div:first-child {
+    border-radius: 0;
+  }
+  section.content__service .service__wrap > div > div {
     height: 53.846vw;
     padding: 5.128vw;
   }
-  section.content__service .service__wrap > * > div.service-01 {
+  section.content__service .service__wrap > div > div.service-01 {
     border-top-right-radius: 50px;
   }
-  section.content__service .service__wrap > * > div.service-03 {
-    border-radius: 0;
-  }
-  section.content__service .service__wrap > * > div h4 {
+  section.content__service .service__wrap > div > div h4 {
     font-size: 6.154vw;
   }
-  section.content__service .service__wrap > * > div p {
+  section.content__service .service__wrap > div > div p {
     padding-top: 3.59vw;
     font-size: 3.59vw;
   }
@@ -1317,6 +1487,9 @@ section.content__flatform .content__list .item .body ul li span.name.type15::aft
     max-width: 100%;
     width: 100%;
     margin: 10.256vw 0 2vw;
+  }
+  section.content__composition .diagram img {
+    width: 100%;
   }
   section.content__function {
     flex-direction: column;
