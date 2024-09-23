@@ -122,21 +122,39 @@ header {
 }
 
 nav.bi__nav {
-  display: none;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
   width: 100%;
-  height: 100vh;
+  color: #fff;
   padding: 2rem;
   flex-direction: column;
   background-color: $white-color;
-  @include position(fixed, 0, 0, 110);
-  &.active {
-    display: flex;
-  }
+  transition: left 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition-delay: 0.2s;
   .nav__head {
     display: flex;
     @include flex-align(space-between, start);
   }
   .nav__body {
+    opacity: 0;
+    transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-delay: 1.2s;
+  }
+  &.active {
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1001;
+    .nav__body {
+      opacity: 1;
+    }
   }
 }
 
@@ -191,7 +209,7 @@ main {
           padding: 0 2rem;
           z-index: 2;
           h2 {
-            font-size: 3.75rem;
+            font-size: 3.125vw;
             font-weight: bold;
             text-transform: uppercase;
             transition: color 0.8s ease-in-out, -webkit-text-stroke 0.8s ease-in-out;
@@ -201,7 +219,7 @@ main {
           p {
             color: $white-color;
             padding-top: 1rem;
-            font-size: 30px;
+            font-size: 1.563vw;
             transition: all 0.3s ease-out;
           }
         }
@@ -215,7 +233,7 @@ main {
           left: 0;
           background-color: $black-color;
           transition: all 1s ease-out;
-          opacity: 0.4;
+          opacity: 0.3;
           z-index: 1;
         }
         &:last-child {
@@ -330,8 +348,25 @@ footer {
   .menu__icon span {
     background: violet !important;
   }
-  main section .inner {
-    padding: 6.944vw 40px;
+  main {
+    section {
+      .inner {
+        padding: 6.944vw 40px;
+      }
+      .intro__wrap {
+        .bi__intro {
+          .bi__intro__title {
+            h2 {
+              font-size: 2.778vw;
+            }
+            p {
+              padding-top: 1rem;
+              font-size: 2.083vw;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
