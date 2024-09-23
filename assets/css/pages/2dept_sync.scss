@@ -215,6 +215,32 @@ section {
         background-size: 100% auto;
       }
     }
+    &.business-ai .service__wrap > div > div {
+      &.service-01 {
+        background: url("/BI/assets/images/pages/business_ai/service-01.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+      &.service-02 {
+        background: url("/BI/assets/images/pages/business_ai/service-02.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+      &.service-03 {
+        background: url("/BI/assets/images/pages/business_ai/service-03.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+      &.service-04 {
+        background: url("/BI/assets/images/pages/business_ai/service-04.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+      &.service-05 {
+        background: url("/BI/assets/images/pages/business_ai/service-05.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+      &.service-06 {
+        background: url("/BI/assets/images/pages/business_ai/service-06.png") 0 0 no-repeat;
+        background-size: 100% auto;
+      }
+    }
     .service__wrap {
       margin-top: 120px;
       overflow: hidden;
@@ -653,7 +679,7 @@ section {
   }
   &.content__introduce {
     .content__tabs {
-      margin-top: 60px;
+      margin-top: 70px;
       .tab__menu {
         display: flex;
         flex-wrap: nowrap;
@@ -697,10 +723,13 @@ section {
           .cards {
             margin-top: 60px;
             display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
             li {
-              flex: 1;
-              margin-right: 40px;
-              padding: 20px 30px;
+              flex: 0 1 22.5%;
+              padding: 30px;
+              margin-bottom: 40px;
               border: 1px solid $gray2-color;
               border-top-right-radius: 50px;
               box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
@@ -713,6 +742,16 @@ section {
                 text-align: right;
                 color: $sign-color;
               }
+              .head-text {
+                font-size: 20px;
+                font-weight: 700;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+                border-bottom: 1px solid $gray2-color;
+                text-align: left;
+                color: $text-color;
+                letter-spacing: -1px;
+              }
               .title {
                 font-size: 20px;
                 font-weight: 700;
@@ -721,9 +760,51 @@ section {
               .desc {
                 font-size: 16px;
                 line-height: 1.3em;
+                min-height: 5em;
               }
               &:last-child {
                 margin-right: 0;
+              }
+            }
+            &.type-2col {
+              flex-wrap: wrap;
+              justify-content: space-between;
+              li {
+                flex: 0 1 48.5%;
+                padding: 0;
+                margin: 0 0 40px;
+                &:nth-of-type(even) {
+                  margin-right: 0;
+                }
+                .head-text {
+                  font-size: 20px;
+                  font-weight: 700;
+                  padding: 24px;
+                  margin-bottom: 0;
+                  border: 0 none;
+                  text-align: center;
+                  color: $text-color;
+                }
+                > img {
+                  width: 100%;
+                }
+                > div {
+                  display: flex;
+                  padding: 30px 0;
+                  flex-wrap: wrap;
+                  div {
+                    flex: 0 1 50%;
+                    padding: 0 40px;
+                    &:nth-of-type(odd) {
+                      border-right: 1px solid $gray-color;
+                    }
+                  }
+                }
+              }
+            }
+            &.type-text {
+              li {
+                background-color: #f4f4f4;
               }
             }
           }

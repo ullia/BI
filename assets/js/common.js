@@ -21,6 +21,10 @@ const gnb = {
     gnb.btnMenu = document.querySelector(".bi__menu");
     gnb.btnClose = document.querySelector(".nav__close");
 
+    if (gnb.pageType === "main") {
+      this.tabsOff();
+    }
+
     gnb.btnMenu.addEventListener("click", e => {
       let target = e.target;
       target.classList.toggle("active");
@@ -48,13 +52,16 @@ const gnb = {
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "auto");
   },
+  tabsOff: function () {
+    gnb.tabs.remove();
+    gnb.header.style.border = "0 none";
+  },
 };
 
 window.addEventListener("scroll", function () {
   let pos = window.scrollY;
-  if (gnb.pageType != null || gnb.pageType == "detail") {
-    gnb.headerInvert(pos);
-  }
+  if (gnb.pageType !== "detail") return;
+  gnb.headerInvert(pos);
 });
 
 // dial function
@@ -137,10 +144,76 @@ function goToTop() {
 //  }
 //});
 
+// Tab menu click event
+function tabsFunc(params) {
+  const tabMenus = document.querySelectorAll(".tab__menu button");
+  tabMenus.forEach(menu => {
+    menu.addEventListener("click", function () {
+      const targetIndex = Array.from(tabMenus).indexOf(this);
+      const targetItem = document.querySelector(
+        `.tab__contents .item:nth-child(${targetIndex + 1})`,
+      );
+      const tabContents = document.querySelectorAll(".tab__contents .item");
+
+      tabMenus.forEach(menu => menu.classList.remove("active"));
+      tabContents.forEach(item => item.classList.remove("active"));
+
+      this.classList.add("active");
+      targetItem.classList.add("active");
+    });
+  });
+}
+
+// swiper for mobile
+var swiperInstance = null;
+
+function initSwiper(elem) {
+  if (swiperInstance === null) {
+    const element = document.querySelector(elem);
+    element.classList.add("swiper");
+    console.log(element.children[0].children);
+    element.children[0].classList.add("swiper-wrapper");
+    [].forEach.call(element.children[0].children, item => {
+      item.classList.add("swiper-slide");
+    });
+
+    swiperInstance = new Swiper(".swiper", {
+      slidesPerView: 1,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        type: "progressbar",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  }
+}
+
+function destroySwiper(elem) {
+  if (swiperInstance === null) return;
+  swiperInstance.destroy();
+  swiperInstance = null;
+
+  const element = document.querySelector(elem);
+  element.classList.remove("swiper");
+  console.log(element.children[0].children);
+  element.children[0].classList.remove("swiper-wrapper");
+  [].forEach.call(element.children[0].children, item => {
+    item.classList.remove("swiper-slide");
+  });
+}
+
+////////////////////////////
+
 window.addEventListener("DOMContentLoaded", function () {
   device.init();
   gnb.init();
   if (gnb.pageType === "detail" && dialObj.dial === null) dialObj.init();
+  tabsFunc();
 });
 
 window.addEventListener("resize", function () {
