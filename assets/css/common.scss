@@ -165,9 +165,22 @@ main {
     display: flex;
     @include flex-align(center, center);
     &.fullHeight {
+      overflow: hidden;
       height: 100vh;
       background-color: $black-color;
+      .swiper-controls {
+        width: 100%;
+        height: 4px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        .swiper-pagination-progressbar-fill {
+          background-color: $sign-color;
+        }
+      }
     }
+
     .inner {
       position: relative;
       padding: 120px 40px;
@@ -351,7 +364,7 @@ footer {
   main {
     section {
       .inner {
-        padding: 6.944vw 40px;
+        padding: 6.944vw 2.778vw;
       }
       .intro__wrap {
         .bi__intro {
@@ -419,7 +432,7 @@ footer {
             z-index: 1;
           }
           &:hover {
-            pointer-events: none;
+            flex-basis: 100%;
           }
           &:not(:hover) {
             flex-basis: 100%;
@@ -529,6 +542,12 @@ footer {
   main {
     width: 100%;
     section {
+      .inner {
+        padding: 12.821vw 5.128vw;
+      }
+      &.fullHeight {
+        overflow: hidden;
+      }
       .intro__wrap {
         .bi__intro {
           flex: 0 0 auto;
@@ -541,25 +560,6 @@ footer {
               padding-top: 1rem;
               font-size: 6.154vw;
             }
-          }
-          &::after {
-            display: inline-block;
-            content: "";
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: $black-color;
-            transition: all 1s ease-out;
-            opacity: 0.4;
-            z-index: 1;
-          }
-          &:hover {
-            pointer-events: none;
-          }
-          &:not(:hover) {
-            flex-basis: 100%;
           }
         }
       }

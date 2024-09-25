@@ -92,8 +92,11 @@
         <div class="inner">
           <h3>간편본인인증이란?</h3>
           <p class="service__desc">
-            사용자가 자신의 신원을 확인할 때, 복잡한 절차 없이<br />
-            <strong>간단한 방법으로 인증을 완료</strong>할 수 있는 시스템입니다.
+            사용자가 자신의 신원을 확인할 때,<span class="mbr"></span> 복잡한 절차 없이<span
+              class="pbr"
+            ></span>
+            <strong>간단한 방법으로<span class="mbr"></span> 인증을 완료</strong>할 수 있는
+            시스템입니다.
           </p>
           <div class="service__wrap">
             <div>
@@ -156,40 +159,22 @@
               <li class="">
                 <img src="/BI/assets/images/pages/business_certification/feature-02.png" alt="" />
                 <h4>안전성</h4>
-                <p>
-                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                  자동화된 개발/배포<br />
-                </p>
+                <p>최신 보안 기술을 사용하여 사용자의 개인정보를 안전하게 보호</p>
               </li>
               <li class="">
                 <img src="/BI/assets/images/pages/business_certification/feature-03.png" alt="" />
                 <h4>다양한<br />인증 방법</h4>
-                <p>
-                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                  자동화된 개발/배포<br />
-                  다양한 모니터링 환경 제공<br />
-                  특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
-                </p>
+                <p>지문, 얼굴 인식, 생체 인식, SMS 인증, 이메일 인증 등 다양한 방법을 제공</p>
               </li>
               <li class="">
                 <img src="/BI/assets/images/pages/business_certification/feature-04.png" alt="" />
                 <h4>호환성</h4>
-                <p>
-                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                  자동화된 개발/배포<br />
-                  다양한 모니터링 환경 제공<br />
-                  특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
-                </p>
+                <p>다양한 플랫폼과 기기에서 사용 가능하며, 언제 어디서나 본인 인증 가능</p>
               </li>
               <li class="">
                 <img src="/BI/assets/images/pages/business_certification/feature-05.png" alt="" />
                 <h4>시간 절약</h4>
-                <p>
-                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                  자동화된 개발/배포<br />
-                  다양한 모니터링 환경 제공<br />
-                  특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
-                </p>
+                <p>빠르고 효율적인 인증 절차로 사용자의 시간을 절약</p>
               </li>
             </ul>
             <div class="swiper-controls">
@@ -204,50 +189,6 @@
         </div>
         <script>
           window.addEventListener("DOMContentLoaded", function () {
-            var swiperInstance = null;
-
-            function initSwiper(elem) {
-              if (swiperInstance === null) {
-                const element = document.querySelector(elem);
-                element.classList.add("swiper");
-                console.log(element.children[0].children);
-                element.children[0].classList.add("swiper-wrapper");
-                [].forEach.call(element.children[0].children, item => {
-                  item.classList.add("swiper-slide");
-                });
-
-                swiperInstance = new Swiper(".swiper", {
-                  slidesPerView: 1,
-                  loop: true,
-                  pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                    type: "progressbar",
-                  },
-                  navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                  },
-                });
-              }
-            }
-
-            function destroySwiper(elem) {
-              if (swiperInstance === null) return;
-              swiperInstance.destroy();
-              swiperInstance = null;
-
-              const element = document.querySelector(elem);
-              element.classList.remove("swiper");
-              console.log(element.children[0].children);
-              element.children[0].classList.remove("swiper-wrapper");
-              [].forEach.call(element.children[0].children, item => {
-                item.classList.remove("swiper-slide");
-              });
-            }
-
-            console.log(window.innerWidth);
-
             function handleResize() {
               if (device.type == "mobile") {
                 if (swiperInstance === null) {

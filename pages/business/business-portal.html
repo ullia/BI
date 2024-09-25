@@ -125,29 +125,22 @@
               <li class="">
                 <img src="/BI/assets/images/pages/business_portal/feature-02.png" alt="" />
                 <h4>고급 보안 기능</h4>
-                <p>
-                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                  자동화된 개발/배포<br />
-                </p>
+                <p>최고 수준의 보안 프로토콜을 적용하여 중요한 데이터를 안전하게 보호</p>
               </li>
               <li class="">
                 <img src="/BI/assets/images/pages/business_portal/feature-03.png" alt="" />
                 <h4>브랜드 맞춤형</h4>
                 <p>
-                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                  자동화된 개발/배포<br />
-                  다양한 모니터링 환경 제공<br />
-                  특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
+                  브랜드별 특성에 맞춰 각 조직의 요구에 맞춘 맞춤형 기능을 제공하며, 효율적인 업무
+                  환경을 지원
                 </p>
               </li>
               <li class="">
                 <img src="/BI/assets/images/pages/business_portal/feature-04.png" alt="" />
                 <h4>접근성 향상</h4>
                 <p>
-                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                  자동화된 개발/배포<br />
-                  다양한 모니터링 환경 제공<br />
-                  특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
+                  다양한 장치와의 호환성을 제공하여 언제 어디서나 쉽게 접근 가능. 이를 통해 유연한
+                  업무 환경 조성.
                 </p>
               </li>
             </ul>
@@ -163,50 +156,6 @@
         </div>
         <script>
           window.addEventListener("DOMContentLoaded", function () {
-            var swiperInstance = null;
-
-            function initSwiper(elem) {
-              if (swiperInstance === null) {
-                const element = document.querySelector(elem);
-                element.classList.add("swiper");
-                console.log(element.children[0].children);
-                element.children[0].classList.add("swiper-wrapper");
-                [].forEach.call(element.children[0].children, item => {
-                  item.classList.add("swiper-slide");
-                });
-
-                swiperInstance = new Swiper(".swiper", {
-                  slidesPerView: 1,
-                  loop: true,
-                  pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                    type: "progressbar",
-                  },
-                  navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                  },
-                });
-              }
-            }
-
-            function destroySwiper(elem) {
-              if (swiperInstance === null) return;
-              swiperInstance.destroy();
-              swiperInstance = null;
-
-              const element = document.querySelector(elem);
-              element.classList.remove("swiper");
-              console.log(element.children[0].children);
-              element.children[0].classList.remove("swiper-wrapper");
-              [].forEach.call(element.children[0].children, item => {
-                item.classList.remove("swiper-slide");
-              });
-            }
-
-            console.log(window.innerWidth);
-
             function handleResize() {
               if (device.type == "mobile") {
                 if (swiperInstance === null) {

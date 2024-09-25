@@ -84,13 +84,28 @@
             </div>
           </a>
         </div>
+        <div class="swiper-controls">
+          <div class="swiper-pagination"></div>
+        </div>
       </section>
+
       <script>
         window.addEventListener("DOMContentLoaded", function () {
+          swiperOption = {
+            slidesPerView: 1,
+            loop: false,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+              type: "progressbar",
+            },
+            navigation: false,
+          };
           function handleResize() {
+            console.log(device.type);
             if (device.type != "desktop") {
               if (swiperInstance === null) {
-                initSwiper(".mobile-swiper");
+                initSwiper(".mobile-swiper", swiperOption);
               }
             } else {
               destroySwiper(".mobile-swiper");
@@ -120,7 +135,9 @@
             </li>
             <li>
               <p class="name">ADDRESS</p>
-              <p class="desc">(08511) 서울특별시 금천구 벚꽃로 36길 30 7층 701~708호</p>
+              <p class="desc">
+                (08511) 서울특별시 금천구 벚꽃로 <span class="mbr"></span>36길 30 7층 701~708호
+              </p>
             </li>
           </ul>
           <p class="footer__copyright">

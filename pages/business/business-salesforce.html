@@ -122,38 +122,32 @@
                 <img src="/BI/assets/images/pages/business_salesforce/feature-01.png" alt="" />
                 <h4>판매 관리</h4>
                 <p>
-                  판매 자동화를 통해<br />
-                  잠재 고객 관리, 기회 추적,<br />
-                  거래 성사까지 모든 판매<br />
-                  과정을 자동화합니다.
+                  판매 자동화를 통해 잠재 고객 관리, 기회 추적, 거래 성사까지 모든 판매 과정을
+                  자동화합니다.
                 </p>
               </li>
               <li class="">
                 <img src="/BI/assets/images/pages/business_salesforce/feature-02.png" alt="" />
                 <h4>마케팅 서비스</h4>
                 <p>
-                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                  자동화된 개발/배포<br />
+                  개별 고객의 특성에 맞는 맞춤형 마케팅 캠페인이나 이벤트를 실행할 수 있도록
+                  지원합니다. 이를 통해 고객에게 만족도가 높은 경험을 제공할 수 있게 될 것입니다.
                 </p>
               </li>
               <li class="">
                 <img src="/BI/assets/images/pages/business_salesforce/feature-03.png" alt="" />
                 <h4>고객 서비스</h4>
                 <p>
-                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                  자동화된 개발/배포<br />
-                  다양한 모니터링 환경 제공<br />
-                  특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
+                  고객 만족도 향상을 위해 고객이 겪는 문제를 빠르게 해결하고, 만족도를 높이는 도구를
+                  갖추고 있습니다.
                 </p>
               </li>
               <li class="">
                 <img src="/BI/assets/images/pages/business_salesforce/feature-04.png" alt="" />
                 <h4>고객 데이터<br />분석</h4>
                 <p>
-                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                  자동화된 개발/배포<br />
-                  다양한 모니터링 환경 제공<br />
-                  특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
+                  고객의 행동 패턴을 분석한 데이터를 기반으로 맞춤형 상품 추천과 프로모션을
+                  제공합니다.
                 </p>
               </li>
             </ul>
@@ -169,50 +163,6 @@
         </div>
         <script>
           window.addEventListener("DOMContentLoaded", function () {
-            var swiperInstance = null;
-
-            function initSwiper(elem) {
-              if (swiperInstance === null) {
-                const element = document.querySelector(elem);
-                element.classList.add("swiper");
-                console.log(element.children[0].children);
-                element.children[0].classList.add("swiper-wrapper");
-                [].forEach.call(element.children[0].children, item => {
-                  item.classList.add("swiper-slide");
-                });
-
-                swiperInstance = new Swiper(".swiper", {
-                  slidesPerView: 1,
-                  loop: true,
-                  pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                    type: "progressbar",
-                  },
-                  navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                  },
-                });
-              }
-            }
-
-            function destroySwiper(elem) {
-              if (swiperInstance === null) return;
-              swiperInstance.destroy();
-              swiperInstance = null;
-
-              const element = document.querySelector(elem);
-              element.classList.remove("swiper");
-              console.log(element.children[0].children);
-              element.children[0].classList.remove("swiper-wrapper");
-              [].forEach.call(element.children[0].children, item => {
-                item.classList.remove("swiper-slide");
-              });
-            }
-
-            console.log(window.innerWidth);
-
             function handleResize() {
               if (device.type == "mobile") {
                 if (swiperInstance === null) {
@@ -235,7 +185,7 @@
             <h3>Service <strong>Introduce</strong></h3>
           </div>
           <div class="content__tabs">
-            <div class="tab__menu">
+            <div class="tab__menu fullWidth">
               <button type="button" class="active">영업</button>
               <button type="button">서비스</button>
               <button type="button">마케팅</button>

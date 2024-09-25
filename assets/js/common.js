@@ -2,7 +2,7 @@ const device = {
   type: null,
   init: function () {
     device.type =
-      window.innerWidth > 1024 ? "desktop" : window.innerWidth > 768 ? "tablet" : "mobile";
+      window.innerWidth > 1280 ? "desktop" : window.innerWidth > 768 ? "tablet" : "mobile";
   },
 };
 
@@ -82,7 +82,7 @@ const dialObj = {
     dialObj.size = dialObj.dial.offsetWidth;
     dialObj.btns = document.querySelectorAll(".dial__wrap button");
     dialObj.btnsTotal = dialObj.btns.length;
-    dialObj.Descs = document.querySelectorAll(".dial__desc li");
+    dialObj.Descs = document.querySelectorAll(".dial__desc .dial-item");
     dialObj.btnsInnerDistance =
       device.type === "desktop" ? 100 : device.type === "tablet" ? 60 : 40;
 
@@ -100,6 +100,7 @@ const dialObj = {
     });
   },
   matchDescs: function (idx) {
+    console.log(idx);
     dialObj.Descs.forEach(desc => desc.classList.remove("active"));
     dialObj.Descs[idx].classList.add("active");
     this.pagenation(idx);
@@ -164,10 +165,10 @@ function tabsFunc(params) {
   });
 }
 
-// swiper for mobile
+// swiper
 var swiperInstance = null;
 
-function initSwiper(elem) {
+function initSwiper(elem, options) {
   if (swiperInstance === null) {
     const element = document.querySelector(elem);
     element.classList.add("swiper");
@@ -177,9 +178,10 @@ function initSwiper(elem) {
       item.classList.add("swiper-slide");
     });
 
-    swiperInstance = new Swiper(".swiper", {
+    _options = options || {
       slidesPerView: 1,
-      loop: true,
+      loop: false,
+      spaceBetween: 10,
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -189,7 +191,15 @@ function initSwiper(elem) {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
-    });
+      breakpoints: {
+        768: {
+          slidesPerView: 6, //브라우저가 768보다 클 때
+          spaceBetween: 0,
+        },
+      },
+    };
+    console.log(_options);
+    swiperInstance = new Swiper(".swiper", _options);
   }
 }
 
@@ -206,6 +216,18 @@ function destroySwiper(elem) {
     item.classList.remove("swiper-slide");
   });
 }
+
+$(".ani-03").each(function () {
+  let text = this;
+  text.innerHTML = text.textContent.replace(/\S/g, "<i>$&</i>");
+  $(this)
+    .find("i")
+    .each(function (index, item) {
+      $(this).addClass("num" + index);
+      let i = index / 14;
+      $(this).css("animation-delay", i + 0.8 + "s");
+    });
+});
 
 ////////////////////////////
 

@@ -171,50 +171,29 @@
               <li class="">
                 <img src="/BI/assets/images/pages/business_ai/feature-02.png" alt="" />
                 <h4>데이터 분석</h4>
-                <p>
-                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                  자동화된 개발/배포<br />
-                </p>
+                <p>대량의 데이터 분석을 통해 얻은 소비자 행동 패턴을 비즈니스 의사 결정에 활용</p>
               </li>
               <li class="">
                 <img src="/BI/assets/images/pages/business_ai/feature-03.png" alt="" />
                 <h4>자동화</h4>
-                <p>
-                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                  자동화된 개발/배포<br />
-                  다양한 모니터링 환경 제공<br />
-                  특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
-                </p>
+                <p>단순 반복 작업을 자동화하여 효율성 증대</p>
               </li>
               <li class="">
                 <img src="/BI/assets/images/pages/business_ai/feature-04.png" alt="" />
                 <h4>음성 인식</h4>
-                <p>
-                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                  자동화된 개발/배포<br />
-                  다양한 모니터링 환경 제공<br />
-                  특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
-                </p>
+                <p>음성 인식 기술을 통한 고객 서비스 활용 지원</p>
               </li>
               <li class="">
                 <img src="/BI/assets/images/pages/business_ai/feature-05.png" alt="" />
                 <h4>보안 및<br />위협 감지</h4>
                 <p>
-                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                  자동화된 개발/배포<br />
-                  다양한 모니터링 환경 제공<br />
-                  특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
+                  네트워크 트래픽을 분석하고 비정상적인 활동을 감지하여 사이버 위협으로부터 보호
                 </p>
               </li>
               <li class="">
                 <img src="/BI/assets/images/pages/business_ai/feature-05.png" alt="" />
                 <h4>맞춤 추천<br />시스템</h4>
-                <p>
-                  현대화된 아키텍처가 요구하는 컨테이너 운영 환경<br />
-                  자동화된 개발/배포<br />
-                  다양한 모니터링 환경 제공<br />
-                  특정 업체에 종속되지 않는 오픈 소스 기반 솔루션
-                </p>
+                <p>사용자의 취향과 행동을 분석하여 맞춤형 콘텐츠, 제품, 서비스 추천</p>
               </li>
             </ul>
             <div class="swiper-controls">
@@ -229,50 +208,6 @@
         </div>
         <script>
           window.addEventListener("DOMContentLoaded", function () {
-            var swiperInstance = null;
-
-            function initSwiper(elem) {
-              if (swiperInstance === null) {
-                const element = document.querySelector(elem);
-                element.classList.add("swiper");
-                console.log(element.children[0].children);
-                element.children[0].classList.add("swiper-wrapper");
-                [].forEach.call(element.children[0].children, item => {
-                  item.classList.add("swiper-slide");
-                });
-
-                swiperInstance = new Swiper(".swiper", {
-                  slidesPerView: 1,
-                  loop: true,
-                  pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                    type: "progressbar",
-                  },
-                  navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                  },
-                });
-              }
-            }
-
-            function destroySwiper(elem) {
-              if (swiperInstance === null) return;
-              swiperInstance.destroy();
-              swiperInstance = null;
-
-              const element = document.querySelector(elem);
-              element.classList.remove("swiper");
-              console.log(element.children[0].children);
-              element.children[0].classList.remove("swiper-wrapper");
-              [].forEach.call(element.children[0].children, item => {
-                item.classList.remove("swiper-slide");
-              });
-            }
-
-            console.log(window.innerWidth);
-
             function handleResize() {
               if (device.type == "mobile") {
                 if (swiperInstance === null) {
