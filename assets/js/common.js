@@ -13,6 +13,10 @@ const gnb = {
   pageType: null,
   btnMenu: null,
   btnClose: null,
+  menu: null,
+  menuItem: null,
+  menuItemBtn: null,
+  menuItemList: null,
   init: function () {
     gnb.header = document.querySelector(".bi__header");
     gnb.nav = document.querySelector(".bi__nav");
@@ -20,26 +24,54 @@ const gnb = {
     gnb.pageType = document.querySelector("body").dataset.type || null;
     gnb.btnMenu = document.querySelector(".bi__menu");
     gnb.btnClose = document.querySelector(".nav__close");
+    gnb.menu = document.querySelector(".nav__menu");
+    gnb.menuItem = document.querySelectorAll(".menu__item");
+    gnb.menuItemBtn = document.querySelectorAll(".item__button");
+    gnb.menuItemList = document.querySelectorAll(".item__list");
 
     if (gnb.pageType === "main") {
       this.tabsOff();
     }
 
     gnb.btnMenu.addEventListener("click", e => {
-      let target = e.target;
+      let target = e.currentTarget;
       target.classList.toggle("active");
       gnb.open();
     });
 
-    gnb.btnClose.addEventListener("click", () => {
+    gnb.btnClose.addEventListener("click", e => {
       gnb.close();
+      gnb.menuItem.style.visibility = "hidden";
+      gnb.menuItem.style.transform = "translateY(3.125vw)";
+      gnb.menuItem.style.opacity = 0;
+    });
+
+    gnb.menuItemBtn.forEach(button => {
+      button.addEventListener("mouseenter", e => {
+        let target = e.currentTarget;
+        gnb.menuItem.forEach(item => item.classList.remove("active"));
+        target.parentNode.classList.add("active");
+      });
+    });
+
+    makeElemFadeUp(gnb.menuItem, 0.8, 30);
+
+    gnb.menuItemList.forEach((list, index) => {
+      const items = list.querySelectorAll("a");
+
+      items.forEach((item, index) => {
+        item.style.transitionDelay = `${index * 0.2}s`;
+      });
     });
   },
   open: function () {
     gnb.nav.classList.add("active");
+    // const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+    // gnb.nav.style.paddingRight = `${scrollBarWidth}px`;
     gnb.scrollLock("lock");
   },
   close: function () {
+    gnb.menuItem.forEach(item => item.classList.remove("active"));
     gnb.nav.classList.remove("active");
     gnb.scrollLock("unlock");
   },
@@ -228,6 +260,26 @@ $(".ani-03").each(function () {
       $(this).css("animation-delay", i + 0.8 + "s");
     });
 });
+
+// 다중부모 하위 태그 delay 부여함수
+function makeArrFadeUp(list, item) {
+  const _list = list;
+  _list.forEach((list, index) => {
+    const _items = list.querySelectorAll(item);
+    console.log(_items);
+
+    _items.forEach((item, index) => {
+      item.style.transitionDelay = `${index * 0.2}s`;
+    });
+  });
+}
+
+// 단일부모 하위 태그 delay 부여함수
+function makeElemFadeUp(items, addDelay) {
+  items.forEach((item, index) => {
+    item.style.transitionDelay = `${index * 0.2 + addDelay || 0}s`;
+  });
+}
 
 ////////////////////////////
 
