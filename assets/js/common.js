@@ -249,17 +249,20 @@ function destroySwiper(elem) {
   });
 }
 
-$(".ani-03").each(function () {
-  let text = this;
-  text.innerHTML = text.textContent.replace(/\S/g, "<i>$&</i>");
-  $(this)
-    .find("i")
-    .each(function (index, item) {
-      $(this).addClass("num" + index);
-      let i = index / 14;
-      $(this).css("animation-delay", i + 0.8 + "s");
+function aniText() {
+  const elements = document.querySelectorAll(".ani-text");
+  elements.forEach(function (text) {
+    text.innerHTML = text.textContent.replace(/\S/g, "<i>$&</i>");
+    console.log(text.innerHTML);
+
+    const items = text.querySelectorAll("i");
+    items.forEach(function (item, index) {
+      item.classList.add("num" + index);
+      let delay = index / 14 + 0.8;
+      item.style.animationDelay = delay + "s";
     });
-});
+  });
+}
 
 // 다중부모 하위 태그 delay 부여함수
 function makeArrFadeUp(list, item) {
@@ -288,6 +291,7 @@ window.addEventListener("DOMContentLoaded", function () {
   gnb.init();
   if (gnb.pageType === "detail" && dialObj.dial === null) dialObj.init();
   tabsFunc();
+  aniText();
 });
 
 window.addEventListener("resize", function () {

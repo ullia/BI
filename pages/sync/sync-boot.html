@@ -66,7 +66,7 @@
               <div class="item__list">
                 <a href="/BI/pages/hub-tech.html">기술</a>
                 <a href="/BI/pages/hub-business.html"">사업분야</a>
-                <a href="/BI/pages/hub-agency.html">신사업&에이전시</a>
+                <a href="/BI/pages/agency/agency.html">신사업&에이전시</a>
               </div>
             </li>
             <li class="menu__item">
@@ -102,14 +102,14 @@
     </header>
 
     <main id="container" tabindex="0">
-      <section class="content__banner">
+      <section class="content__banner active">
         <figure>
           <img src="/BI/assets/images/pages/sync_boot/banner.jpg" alt="" class="desktop-image" />
           <img src="/BI/assets/images/pages/sync_boot/banner-m.jpg" alt="" class="mobile-image" />
         </figure>
         <div class="inner">
           <div class="banner__text">
-            <h2>SYNC <strong>BOOT</strong></h2>
+            <h2>SYNC <strong class="ani-text">BOOT</strong></h2>
             <p>
               변화하는 비즈니스 환경 변화에<span class="mbr"></span> 빠르게 대응하기 위한<br />마이크로서비스
               플랫폼
@@ -224,54 +224,9 @@
               </div>
             </div>
           </div>
-          <span class="page__deco type2"></span>
         </div>
         <script>
           window.addEventListener("DOMContentLoaded", function () {
-            var swiperInstance = null;
-
-            function initSwiper(elem) {
-              if (swiperInstance === null) {
-                const element = document.querySelector(elem);
-                element.classList.add("swiper");
-                console.log(element.children[0].children);
-                element.children[0].classList.add("swiper-wrapper");
-                [].forEach.call(element.children[0].children, item => {
-                  item.classList.add("swiper-slide");
-                });
-
-                swiperInstance = new Swiper(".swiper", {
-                  slidesPerView: 1,
-                  loop: true,
-                  pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                    type: "progressbar",
-                  },
-                  navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                  },
-                });
-              }
-            }
-
-            function destroySwiper(elem) {
-              if (swiperInstance === null) return;
-              swiperInstance.destroy();
-              swiperInstance = null;
-
-              const element = document.querySelector(elem);
-              element.classList.remove("swiper");
-              console.log(element.children[0].children);
-              element.children[0].classList.remove("swiper-wrapper");
-              [].forEach.call(element.children[0].children, item => {
-                item.classList.remove("swiper-slide");
-              });
-            }
-
-            console.log(window.innerWidth);
-
             function handleResize() {
               if (device.type == "mobile") {
                 if (swiperInstance === null) {
@@ -306,6 +261,7 @@
             />
           </figure>
         </div>
+        <span class="page__deco type2"></span>
       </section>
       <section class="content__function sync-boot">
         <div class="inner">
@@ -381,9 +337,7 @@
                 </h4>
                 <p class="title">애플리케이션 데이터 공유 제어</p>
                 <p class="desc">
-                  Kubernetes, Docker, Apache Mesos,<br />
-                  OKD, Operator Hub, Swarm,<br />
-                  LXC, Portainer, Rancher
+                  Istio, Linkerd, Cilium, Consul connect, Traefik, OSM, NSM, Kuma
                 </p>
               </li>
               <li class="dial-item">
@@ -393,9 +347,7 @@
                 </h4>
                 <p class="title">서비스의 가용 상태, 서비스 식별 관리</p>
                 <p class="desc">
-                  Kubernetes, Docker, Apache Mesos,<br />
-                  OKD, Operator Hub, Swarm,<br />
-                  LXC, Portainer, Rancher
+                  Consul, Etcd, Apache Zookeeper, Doozer, Netfilx's Eureka, SamrtStack, Serf
                 </p>
               </li>
               <li class="dial-item">
@@ -404,9 +356,7 @@
                 </h4>
                 <p class="title">모든 서비스 요청의 단일지점</p>
                 <p class="desc">
-                  Kubernetes, Docker, Apache Mesos,<br />
-                  OKD, Operator Hub, Swarm,<br />
-                  LXC, Portainer, Rancher
+                  Kong, Tyk, KrakenD.io, Gravitee, Gloo Edge, Goku, WSO2, Fusio, Apiman
                 </p>
               </li>
               <li class="dial-item">
@@ -415,27 +365,21 @@
                 </h4>
                 <p class="title">서비스 상태/서비스 통찰</p>
                 <p class="desc">
-                  Kubernetes, Docker, Apache Mesos,<br />
-                  OKD, Operator Hub, Swarm,<br />
-                  LXC, Portainer, Rancher
+                  SigNoz, Graphite, Pinpoint, Prometheus, Javamelody, Stagemonitor, Scouter, Zipkin, Jaeger, Apache Skywalking, Elastic APM, App Metrics, Glowroot
                 </p>
               </li>
               <li class="dial-item">
                 <h4><img src="/BI/assets/images/pages/sync_boot/dial-06.svg" alt="" /> CD/DI</h4>
                 <p class="title">통합/배포 자동화</p>
                 <p class="desc">
-                  Kubernetes, Docker, Apache Mesos,<br />
-                  OKD, Operator Hub, Swarm,<br />
-                  LXC, Portainer, Rancher
+                  Argo CD, CircleCI, GoCD, Gradle, Helm, Jenkins, GitLab, Codeship, Buddy
                 </p>
               </li>
               <li class="dial-item">
                 <h4><img src="/BI/assets/images/pages/sync_boot/dial-07.svg" alt="" /> Service</h4>
                 <p class="title">고객에게 제공할 가치</p>
                 <p class="desc">
-                  Kubernetes, Docker, Apache Mesos,<br />
-                  OKD, Operator Hub, Swarm,<br />
-                  LXC, Portainer, Rancher
+                  Spring, Django, CakePHP, Rails, ASP.NET, Laravel, Vue, Express, Angular, React
                 </p>
               </li>
             </ul>

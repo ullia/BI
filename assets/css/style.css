@@ -33,6 +33,10 @@ body {
   display: inline-block;
 }
 
+.ani-text i {
+  display: inline-block;
+}
+
 #skip__content a {
   overflow: hidden;
   display: block;
@@ -59,9 +63,8 @@ header {
   z-index: 100;
   width: 100%;
   border-bottom: 1px solid #4d4d4d;
-  transition: background-color 0.3s ease-in-out;
 }
-header.invert {
+header.invert .header__wrap {
   filter: invert(1);
   background: #000000;
   font-weight: 500;
@@ -73,6 +76,7 @@ header .header__wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: background-color 0.3s ease-in-out;
 }
 header .header__wrap .bi__logo img {
   display: block;
@@ -111,6 +115,7 @@ header .header__wrap .bi__menu .menu__icon span {
   width: 100%;
   height: 2px;
   background-color: #ffffff;
+  border-radius: 2px;
   transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
 }
 header .header__wrap .bi__menu .menu__icon span:last-child {
@@ -289,6 +294,9 @@ main section {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+main section.active .ani-text i {
+  animation: fadeLeft 0.4s 0.2s both;
 }
 main section.fullHeight {
   overflow: hidden;
@@ -547,14 +555,122 @@ footer .footer__inner .footer__copyright {
   }
 }
 @media (max-width: 1279px) {
-  .menu__icon span {
-    background: green !important;
-  }
   header .header__wrap {
     padding: 20px 30px;
   }
+  header .header__wrap .bi__tabs {
+    display: none;
+  }
   header .header__wrap .bi__tabs ul li {
     font-size: 14px;
+  }
+  header .header__wrap .bi__menu {
+    width: 20px;
+    height: 20px;
+  }
+  header .header__wrap .bi__menu .menu__icon span {
+    height: 2px;
+  }
+  header nav.bi__nav .nav__head {
+    padding: 20px 30px;
+  }
+  header nav.bi__nav .nav__head .bi__logo img {
+    width: 100%;
+  }
+  header nav.bi__nav .nav__head .nav__support {
+    display: none;
+  }
+  header nav.bi__nav .nav__head .nav__close {
+    width: 5.128vw;
+    height: 5.128vw;
+    color: #ffffff;
+  }
+  header nav.bi__nav .nav__head .nav__close .close__icon {
+    width: 5.128vw;
+    height: 5.128vw;
+  }
+  header nav.bi__nav .nav__head .nav__close .close__icon span {
+    width: 100%;
+    height: 0.278vw;
+    border-radius: 0.278vw;
+  }
+  header nav.bi__nav .nav__body {
+    justify-content: start;
+  }
+  header nav.bi__nav .nav__body ul.nav__menu {
+    padding-left: 3.659vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+  }
+  header nav.bi__nav .nav__body ul.nav__menu .menu__item {
+    padding: 6.098vw 0 0;
+    flex-direction: column;
+  }
+  header nav.bi__nav .nav__body ul.nav__menu .menu__item.active .item__button {
+    color: transparent;
+    -webkit-text-stroke: 1px #ffffff;
+  }
+  header nav.bi__nav .nav__body ul.nav__menu .menu__item.active .item__list {
+    max-height: 150px;
+    visibility: visible;
+  }
+  header nav.bi__nav .nav__body ul.nav__menu .menu__item.active .item__list a {
+    visibility: visible;
+    transform: translateX(0);
+    opacity: 1;
+  }
+  header nav.bi__nav .nav__body ul.nav__menu .menu__item .item__button {
+    font-size: 3.902vw;
+    text-align: left;
+  }
+  header nav.bi__nav .nav__body ul.nav__menu .menu__item .item__list {
+    visibility: hidden;
+    max-height: 0;
+    padding-left: 0;
+    padding-top: 2.564vw;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    transition: max-height 0.5s ease-out;
+  }
+  header nav.bi__nav .nav__body ul.nav__menu .menu__item .item__list a {
+    margin: 1.564vw 0;
+    font-size: 2.927vw;
+    text-align: left;
+    cursor: pointer;
+    transform: translateX(30px) translateY(0);
+  }
+  header nav.bi__nav .nav__body ul.nav__menu .menu__item .item__list a::after {
+    width: 0.732vwvw;
+    height: 0.732vwvw;
+    top: -0.732vwvw;
+    right: -0.732vwvw;
+  }
+  header nav.bi__nav .nav__body .nav__support {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 30px;
+    bottom: 40px;
+    z-index: 1;
+  }
+  header nav.bi__nav .nav__body .nav__support a {
+    padding-top: 3.128vw;
+    font-size: 2vw;
+    text-decoration: underline;
+  }
+  header nav.bi__nav.active {
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    z-index: 101;
+  }
+  header nav.bi__nav.active .nav__body ul.nav__menu .menu__item {
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
   }
   footer .footer__inner a {
     display: none;
@@ -609,9 +725,6 @@ footer .footer__inner .footer__copyright {
   .mbr {
     display: block;
   }
-  .menu__icon span {
-    background: yellow !important;
-  }
   header .header__wrap {
     padding: 20px 30px;
   }
@@ -625,8 +738,8 @@ footer .footer__inner .footer__copyright {
     display: none;
   }
   header .header__wrap .bi__menu {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
   }
   header .header__wrap .bi__menu .menu__icon span {
     height: 2px;
@@ -802,9 +915,14 @@ footer .footer__inner .footer__copyright {
     font-size: 6.154vw;
   }
 }
-@media (max-width: 320px) {
-  .menu__icon span {
-    background: red !important;
+@keyframes fadeLeft {
+  0% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 #fullpage.tech .section.sec1 {
@@ -1027,6 +1145,28 @@ footer .footer__inner .footer__copyright {
   opacity: 1;
 }
 
+@media (max-width: 1439px) {
+  #fullpage .section .title_box h2 {
+    font-size: 5.556vw;
+  }
+  #fullpage .section .title_box h3 {
+    font-size: 2.083vw;
+  }
+  #fullpage .section .title_box .btn__more {
+    font-size: 1.389vw;
+  }
+}
+@media (max-width: 1279px) {
+  #fullpage .section .title_box h2 {
+    font-size: 8.989vw;
+  }
+  #fullpage .section .title_box h3 {
+    font-size: 3.659vw;
+  }
+  #fullpage .section .title_box .btn__more {
+    font-size: 2.439vw;
+  }
+}
 @media (max-width: 767px) {
   #fullpage .section .title_box h2 {
     font-size: 10.256vw;
@@ -1100,7 +1240,7 @@ section .page__deco.type1 {
 section .page__deco.type2 {
   width: 110px;
   height: 110px;
-  bottom: -55px;
+  top: -55px;
   left: 25%;
   border-radius: 50%;
   background-color: #c0ded8;
@@ -1878,7 +2018,7 @@ section.content__introduce .content__tabs .tab__contents .item .cards.type-text 
   section .page__deco.type2 {
     width: 7.639vw;
     height: 7.639vw;
-    bottom: -3.819vw;
+    top: -3.819vw;
   }
   section .page__deco.type3 {
     height: 12.5vw;
@@ -2063,6 +2203,9 @@ section.content__introduce .content__tabs .tab__contents .item .cards.type-text 
   }
 }
 @media (max-width: 1279px) {
+  section .h100 {
+    height: 4.688vw;
+  }
   section .content__title span {
     font-size: 1.389vw;
   }

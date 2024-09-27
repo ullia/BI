@@ -66,7 +66,7 @@
               <div class="item__list">
                 <a href="/BI/pages/hub-tech.html">기술</a>
                 <a href="/BI/pages/hub-business.html"">사업분야</a>
-                <a href="/BI/pages/hub-agency.html">신사업&에이전시</a>
+                <a href="/BI/pages/agency/agency.html">신사업&에이전시</a>
               </div>
             </li>
             <li class="menu__item">
@@ -205,54 +205,9 @@
               </div>
             </div>
           </div>
-          <span class="page__deco type2"></span>
         </div>
         <script>
           window.addEventListener("DOMContentLoaded", function () {
-            var swiperInstance = null;
-
-            function initSwiper(elem) {
-              if (swiperInstance === null) {
-                const element = document.querySelector(elem);
-                element.classList.add("swiper");
-                console.log(element.children[0].children);
-                element.children[0].classList.add("swiper-wrapper");
-                [].forEach.call(element.children[0].children, item => {
-                  item.classList.add("swiper-slide");
-                });
-
-                swiperInstance = new Swiper(".swiper", {
-                  slidesPerView: 1,
-                  loop: true,
-                  pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                    type: "progressbar",
-                  },
-                  navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                  },
-                });
-              }
-            }
-
-            function destroySwiper(elem) {
-              if (swiperInstance === null) return;
-              swiperInstance.destroy();
-              swiperInstance = null;
-
-              const element = document.querySelector(elem);
-              element.classList.remove("swiper");
-              console.log(element.children[0].children);
-              element.children[0].classList.remove("swiper-wrapper");
-              [].forEach.call(element.children[0].children, item => {
-                item.classList.remove("swiper-slide");
-              });
-            }
-
-            console.log(window.innerWidth);
-
             function handleResize() {
               if (device.type == "mobile") {
                 if (swiperInstance === null) {
@@ -300,6 +255,7 @@
             />
           </figure>
         </div>
+        <span class="page__deco type2"></span>
       </section>
       <section class="content__function sync-any">
         <div class="inner">
